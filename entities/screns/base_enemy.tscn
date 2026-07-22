@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://7lagbuh3glcu"]
+
+[ext_resource type="Script" uid="uid://mtb4sadusm08" path="res://entities/screpts/base_enemy.gd" id="1_apht4"]
+[ext_resource type="PackedScene" uid="uid://c7dq7vyar8i6c" path="res://entities/screns/component.tscn" id="1_wjgqd"]
+[ext_resource type="PackedScene" uid="uid://1kmgtb3copny" path="res://technical/screens/brain.tscn" id="2_1dfty"]
+[ext_resource type="PackedScene" uid="uid://dkgaf2k0e8x6l" path="res://entities/screns/health_component.tscn" id="2_nnde4"]
+[ext_resource type="PackedScene" uid="uid://drkn54u4sfekx" path="res://entities/screns/characteristic.tscn" id="3_1dfty"]
+[ext_resource type="PackedScene" uid="uid://44st1rd7gj4u" path="res://entities/screns/hitbox_component.tscn" id="5_xx8a4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_khhxn"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_j3pel"]
+
+[node name="BaseEnemy" type="CharacterBody2D" unique_id=769011907]
+script = ExtResource("1_apht4")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=510019299]
+
+[node name="Brain" parent="." unique_id=1934205608 instance=ExtResource("2_1dfty")]
+
+[node name="Component" parent="." unique_id=1726308284 instance=ExtResource("1_wjgqd")]
+
+[node name="Characteristic" parent="Component" unique_id=1655018436 instance=ExtResource("3_1dfty")]
+
+[node name="HealthComponent" parent="Component" unique_id=1758268569 node_paths=PackedStringArray("characteristics_component") instance=ExtResource("2_nnde4")]
+characteristics_component = NodePath("../Characteristic")
+
+[node name="HitboxComponent" parent="Component" unique_id=1558695521 node_paths=PackedStringArray("health_component") instance=ExtResource("5_xx8a4")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Component/HitboxComponent" unique_id=2010279252]
+shape = SubResource("CapsuleShape2D_khhxn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1997868775]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1861014263]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=585493748]
+stream = SubResource("AudioStreamPlaylist_j3pel")

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://1kmgtb3copny"]
+
+[ext_resource type="Script" uid="uid://curakj6fsbyy1" path="res://technical/screpts/brain.gd" id="1_uejlh"]
+[ext_resource type="Script" uid="uid://bcapwrqdyptoy" path="res://technical/screpts/sensors.gd" id="2_q3mk2"]
+[ext_resource type="PackedScene" uid="uid://cktdbp7gookum" path="res://technical/screens/vision_area.tscn" id="2_u1uy1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s1fef"]
+
+[node name="Brain" type="Node" unique_id=1934205608]
+script = ExtResource("1_uejlh")
+
+[node name="Sensors" type="Node" parent="." unique_id=1229957096]
+script = ExtResource("2_q3mk2")
+
+[node name="VisionArea" parent="Sensors" unique_id=852957953 instance=ExtResource("2_u1uy1")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sensors/VisionArea" unique_id=634938440]
+shape = SubResource("CircleShape2D_s1fef")
+debug_color = Color(0.9843137, 0, 0, 0.41960785)
