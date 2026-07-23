@@ -1,17 +1,18 @@
 extends Node2D
 
 @onready var tilemap = $TileMap
-@onready var spawner = $spawner
+@onready var spawner_node = $spawner
 
-const WIDTH := 32
-const HEIGHT := 18
-const SOURCE_ID := 0
+const width := 32
+const height := 18
+const id := 0
 
-const WALL := 0
-const FLOOR := 1
-const DOORL := 3
-const DOORR := 4
-const SPAWNER := 5
+const wall := 0
+const floor := 1
+const exit := 2
+const doorl := 3
+const doorr := 4
+const spawner := 5
 
 var rng := RandomNumberGenerator.new()
 var grid = []
@@ -19,30 +20,32 @@ var grid = []
 var tile_coords = {
 	0: Vector2i(0,0),
 	1: Vector2i(1,0),
+	2: Vector2i(1,0),
 	3: Vector2i(3,0),
 	4: Vector2i(4,0),
 	5: Vector2i(5,0)
 }
 
 func _ready():
+	g.connect("enemys_end", Callable(self, "open_the_doors"))
 	rng.randomize()
 	grid.clear()
-	for y in HEIGHT:
+	for y in height:
 		grid.append([])
-		for x in WIDTH:
-			grid[y].append(WALL)
-	grid[0][15] = DOORL
-	grid[0][16] = DOORR
-	grid[HEIGHT-1][15] = DOORL
-	grid[HEIGHT-1][16] = DOORR
+		for x in width:
+			grid[y].append(wall)
+	grid[0][15] = doorl
+	grid[0][16] = doorr
+	grid[height-1][15] = doorl
+	grid[height-1][16] = doorr
 	var spawners = spawn_spawners()
 	for spawner in spawners:
 		dig_corridor(spawner, Vector2i(16, 0))
 		dig_corridor(spawner, Vector2i(16, 17))
-	for y in HEIGHT:
-		for x in WIDTH:
+	for y in height:
+		for x in width:
 			var atlas_coord = tile_coords[grid[y][x]]
-			tilemap.set_cell(0, Vector2i(x,y), SOURCE_ID, atlas_coord)
+			tilemap.set_cell(0, Vector2i(x,y), id, atlas_coord)
 
 func spawn_spawners() -> Array:
 	var result = []
@@ -55,8 +58,8 @@ func spawn_spawners() -> Array:
 	for rect in quadrants:
 		var x = rng.randi_range(rect.position.x, rect.position.x + rect.size.x - 1)
 		var y = rng.randi_range(rect.position.y, rect.position.y + rect.size.y - 1)
-		grid[y][x] = SPAWNER
-		spawner.position = Vector2(x*20+10, y*20+10)
+		grid[y][x] = spawner
+		spawner_node.position = Vector2(x*20+10, y*20+10)
 		result.append(Vector2i(x,y))
 		
 	return result
@@ -100,8 +103,17 @@ func carve_blob(center: Vector2i):
 			if is_border(pos.x, pos.y):
 				continue
 			if Vector2(dx,dy).length() <= 1:
-				if grid[pos.y][pos.x] == WALL:
-					grid[pos.y][pos.x] = FLOOR
+				if grid[pos.y][pos.x] == wall:
+					grid[pos.y][pos.x] = floor
 
 func is_border(x:int, y:int) -> bool:
-	return x <= 0 or y <= 0 or x >= WIDTH-1 or y >= HEIGHT-1
+	return x <= 0 or y <= 0 or x >= width-1 or y >= height-1
+
+func _on_exit_body_entered(body: Node2D) -> void:
+	print("ass")
+
+func open_the_doors():
+	grid[0][15] = exit
+	grid[0][16] = exit
+	var atlas_coord = tile_coords[2]
+	tilemap.set_cell(0, Vector2i(15,0), id, atlas_coord)
