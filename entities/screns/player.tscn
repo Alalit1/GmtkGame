@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://2ykal2ib6dd1"]
+
+[ext_resource type="Script" uid="uid://b2hs07k08o2yl" path="res://entities/screpts/player.gd" id="1_pmutf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_riqys"]
+size = Vector2(40, 40)
+
+[node name="player" type="CharacterBody2D" unique_id=1310728911]
+position = Vector2(512, 284)
+script = ExtResource("1_pmutf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=830285594]
+offset_left = -10.0
+offset_top = -30.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2100578888]
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="attack_area" type="Area2D" parent="." unique_id=1127192584]
+position = Vector2(0, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area" unique_id=2069580161]
+position = Vector2(40, 0)
+shape = SubResource("RectangleShape2D_riqys")
+
+[node name="ColorRect" type="ColorRect" parent="attack_area/CollisionShape2D" unique_id=215052402]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1620627016]
+
+[node name="combo" type="Timer" parent="." unique_id=1938785498]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="combo" to="." method="_on_combo_timeout"]
