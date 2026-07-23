@@ -6,3 +6,5 @@ extends Node
 var health := resource.health
 var speed := resource.speed
 var speed_up := resource.speed_up
+
+var texture := resource.texture

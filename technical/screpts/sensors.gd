@@ -1,3 +1,4 @@
+class_name Sensors
 extends Node
 
 var found_list: Array[Node2D] = []

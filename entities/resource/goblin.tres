@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://deltl0o2jyovv"]
+
+[ext_resource type="Script" uid="uid://ctxmdtnnd74g7" path="res://entities/screpts/enemy_data.gd" id="1_dlxql"]
+[ext_resource type="Texture2D" uid="uid://bp0dmknurnos5" path="res://icon.svg" id="2_mc46n"]
+
+[resource]
+script = ExtResource("1_dlxql")
+texture = ExtResource("2_mc46n")
+metadata/_custom_type_script = "uid://ctxmdtnnd74g7"

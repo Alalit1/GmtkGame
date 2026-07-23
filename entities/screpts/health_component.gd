@@ -1,7 +1,7 @@
 extends Node
 class_name HealthComponent
 
-signal dead
+signal daed
 @export var characteristics_component : Characteristic
 @onready var MAX_HEALTH := characteristics_component.health
 var health : float
@@ -14,4 +14,4 @@ func gamage(attack):
 	health -= attack.attack_gamage
 	
 	if health <= 0:
-		emit_signal("died")
+		emit_signal("daed")

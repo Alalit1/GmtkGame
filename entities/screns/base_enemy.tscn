@@ -37,3 +37,5 @@ shape = SubResource("CapsuleShape2D_khhxn")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=585493748]
 stream = SubResource("AudioStreamPlaylist_j3pel")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1362725045]
