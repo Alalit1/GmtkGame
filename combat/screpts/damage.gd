@@ -2,6 +2,7 @@ class_name Damage
 extends RefCounted
 
 var data: DamageData
+ 
 
 var source
 var target
