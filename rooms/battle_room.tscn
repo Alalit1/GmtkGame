@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://chpd70hq4bpq5"]
+
+[ext_resource type="Script" uid="uid://dkg2w8xur7hvn" path="res://rooms/battle_room.gd" id="1_yd1nn"]
+[ext_resource type="Texture2D" uid="uid://qqcf53yopo7x" path="res://textures/Без имени-1.png" id="2_fipdq"]
+[ext_resource type="PackedScene" uid="uid://2ykal2ib6dd1" path="res://entities/screns/player.tscn" id="3_yd1nn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yd1nn"]
+texture = ExtResource("2_fipdq")
+texture_region_size = Vector2i(20, 20)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+5:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fipdq"]
+tile_size = Vector2i(20, 20)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_yd1nn")
+
+[node name="BattleRoom" type="Node2D" unique_id=248276238]
+script = ExtResource("1_yd1nn")
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1479463077]
+tile_set = SubResource("TileSet_fipdq")
+rendering_quadrant_size = 20
+format = 2
+
+[node name="player" parent="." unique_id=1310728911 instance=ExtResource("3_yd1nn")]
+position = Vector2(320, 340)
