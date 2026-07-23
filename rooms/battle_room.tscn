@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dkg2w8xur7hvn" path="res://rooms/battle_room.gd" id="1_yd1nn"]
 [ext_resource type="Texture2D" uid="uid://qqcf53yopo7x" path="res://textures/tiles.png" id="2_fipdq"]
-[ext_resource type="PackedScene" uid="uid://2ykal2ib6dd1" path="res://entities/screns/player.tscn" id="3_yd1nn"]
 [ext_resource type="Script" uid="uid://csnpq13mfqtc" path="res://technical/screpts/spawner.gd" id="4_udleo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cqqx1"]
@@ -21,10 +20,8 @@ texture_region_size = Vector2i(20, 20)
 [sub_resource type="TileSet" id="TileSet_fipdq"]
 tile_size = Vector2i(20, 20)
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_cqqx1")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
-size = Vector2(40, 20)
 
 [node name="BattleRoom" type="Node2D" unique_id=248276238]
 script = ExtResource("1_yd1nn")
@@ -34,16 +31,5 @@ tile_set = SubResource("TileSet_fipdq")
 rendering_quadrant_size = 20
 format = 2
 
-[node name="player" parent="." unique_id=1310728911 instance=ExtResource("3_yd1nn")]
-position = Vector2(320, 340)
-
 [node name="spawner" type="Node2D" parent="." unique_id=1675926314]
 script = ExtResource("4_udleo")
-
-[node name="exit" type="Area2D" parent="." unique_id=1705985833]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="exit" unique_id=1511843599]
-position = Vector2(320, 350)
-shape = SubResource("RectangleShape2D_bhunq")
-
-[connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
