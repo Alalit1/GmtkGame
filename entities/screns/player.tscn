@@ -8,6 +8,7 @@ size = Vector2(13, 7)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_riqys"]
 
 [node name="player" type="CharacterBody2D" unique_id=1310728911]
+collision_layer = 0
 script = ExtResource("1_pmutf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=830285594]
@@ -53,6 +54,12 @@ autostart = true
 [node name="dash_cooldown" type="Timer" parent="." unique_id=462985264]
 wait_time = 0.5
 one_shot = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1531621585]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=56579134]
+position = Vector2(0.5, -3.5)
+shape = SubResource("RectangleShape2D_bhunq")
 
 [connection signal="timeout" from="combo" to="." method="_on_combo_timeout"]
 [connection signal="timeout" from="remainder_timer" to="." method="_on_remainder_timer_timeout"]
