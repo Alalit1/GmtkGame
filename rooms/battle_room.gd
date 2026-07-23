@@ -20,7 +20,7 @@ var grid = []
 var tile_coords = {
 	0: Vector2i(0,0),
 	1: Vector2i(1,0),
-	2: Vector2i(1,0),
+	2: Vector2i(2,0),
 	3: Vector2i(3,0),
 	4: Vector2i(4,0),
 	5: Vector2i(5,0)
@@ -46,6 +46,7 @@ func _ready():
 		for x in width:
 			var atlas_coord = tile_coords[grid[y][x]]
 			tilemap.set_cell(0, Vector2i(x,y), id, atlas_coord)
+	open_the_doors()
 
 func spawn_spawners() -> Array:
 	var result = []
@@ -109,11 +110,9 @@ func carve_blob(center: Vector2i):
 func is_border(x:int, y:int) -> bool:
 	return x <= 0 or y <= 0 or x >= width-1 or y >= height-1
 
-func _on_exit_body_entered(body: Node2D) -> void:
-	print("ass")
-
 func open_the_doors():
 	grid[0][15] = exit
 	grid[0][16] = exit
 	var atlas_coord = tile_coords[2]
 	tilemap.set_cell(0, Vector2i(15,0), id, atlas_coord)
+	tilemap.set_cell(0, Vector2i(16,0), id, atlas_coord)
