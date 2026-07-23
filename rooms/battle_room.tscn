@@ -34,7 +34,3 @@ format = 2
 position = Vector2(320, 340)
 
 [node name="spawner" type="Node2D" parent="." unique_id=1675926314]
-
-[node name="ColorRect" type="ColorRect" parent="spawner" unique_id=1282384047]
-offset_right = 10.0
-offset_bottom = 10.0
