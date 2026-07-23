@@ -14,14 +14,7 @@ config/name="GmtkGame"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[audio]
 
-buses/default_bus_layout="uid://k5k04ivsbjgf"
-
-[autoload]
-
-SpawnManager="*uid://bystq8li4ed1v"
-ScreenManager="*uid://bggaro77tohpk"
 
 [display]
 

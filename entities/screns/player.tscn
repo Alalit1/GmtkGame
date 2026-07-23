@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://2ykal2ib6dd1"]
+
+[ext_resource type="Script" uid="uid://b2hs07k08o2yl" path="res://entities/screpts/player.gd" id="1_pmutf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(13, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_riqys"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_pmutf"]
+
+[node name="player" type="CharacterBody2D" unique_id=1310728911]
+z_index = 1
+collision_layer = 2
+script = ExtResource("1_pmutf")
+speed = 1000.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=830285594]
+offset_left = -6.0
+offset_top = -19.0
+offset_right = 7.0
+color = Color(0, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2100578888]
+position = Vector2(0.5, -3.5)
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="attack_area" type="Area2D" parent="." unique_id=1127192584]
+position = Vector2(0, -9.5)
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area" unique_id=2069580161]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_riqys")
+
+[node name="ColorRect" type="ColorRect" parent="attack_area/CollisionShape2D" unique_id=215052402]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1620627016]
+limit_left = 0
+limit_top = 0
+limit_right = 640
+limit_bottom = 360
+
+[node name="combo" type="Timer" parent="." unique_id=1938785498]
+wait_time = 0.1
+one_shot = true
+
+[node name="remainder_timer" type="Timer" parent="." unique_id=844660815]
+wait_time = 0.05
+autostart = true
+
+[node name="dash_cooldown" type="Timer" parent="." unique_id=462985264]
+wait_time = 0.5
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1531621585]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=56579134]
+position = Vector2(0.5, -3.5)
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1420499210]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1180965671]
+stream = SubResource("AudioStreamPlaylist_pmutf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1439537868]
+
+[connection signal="timeout" from="combo" to="." method="_on_combo_timeout"]
+[connection signal="timeout" from="remainder_timer" to="." method="_on_remainder_timer_timeout"]
+[connection signal="timeout" from="dash_cooldown" to="." method="_on_dash_cooldown_timeout"]
