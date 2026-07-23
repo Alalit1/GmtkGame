@@ -17,7 +17,6 @@ var can_charge = true
 var can_combo = true
 
 func _physics_process(delta: float) -> void:
-	print(stamina, can_dash)
 	var mouse_pos = get_global_mouse_position()
 	var direction = global_position.angle_to_point(mouse_pos)
 	$attack_area.global_rotation = direction
