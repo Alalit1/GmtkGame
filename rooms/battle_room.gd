@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var tilemap: TileMap = $TileMap
+@onready var tilemap = $TileMap
+@onready var spawner = $spawner
 
 const WIDTH := 32
 const HEIGHT := 18
@@ -55,7 +56,9 @@ func spawn_spawners() -> Array:
 		var x = rng.randi_range(rect.position.x, rect.position.x + rect.size.x - 1)
 		var y = rng.randi_range(rect.position.y, rect.position.y + rect.size.y - 1)
 		grid[y][x] = SPAWNER
+		spawner.position = Vector2(x*20+10, y*20+10)
 		result.append(Vector2i(x,y))
+		
 	return result
 
 func dig_corridor(start: Vector2i, target: Vector2i):
