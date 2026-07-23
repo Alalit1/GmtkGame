@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chpd70hq4bpq5"]
 
 [ext_resource type="Script" uid="uid://dkg2w8xur7hvn" path="res://rooms/battle_room.gd" id="1_yd1nn"]
-[ext_resource type="Texture2D" uid="uid://qqcf53yopo7x" path="res://textures/Без имени-1.png" id="2_fipdq"]
+[ext_resource type="Texture2D" uid="uid://qqcf53yopo7x" path="res://textures/tiles.png" id="2_fipdq"]
 [ext_resource type="PackedScene" uid="uid://2ykal2ib6dd1" path="res://entities/screns/player.tscn" id="3_yd1nn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yd1nn"]
