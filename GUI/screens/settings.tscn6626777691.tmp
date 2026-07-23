@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://dg50rlj07cca2"]
+
+[ext_resource type="Script" uid="uid://bfj4ad11jbalb" path="res://GUI/screpts/settings.gd" id="1_n16i8"]
+
+[node name="Settings" type="Control" unique_id=42141974]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n16i8")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=871301411]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Back" type="Button" parent="MarginContainer" unique_id=1184225119]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Back"
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=305551085]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=733259995]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Master" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=797594416]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Master" unique_id=1149310509]
+layout_mode = 2
+text = "Master volume"
+
+[node name="Music" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1874469927]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Music" unique_id=485240775]
+layout_mode = 2
+text = "Music volume"
+
+[node name="Music" type="HSlider" parent="MarginContainer/VBoxContainer/Music" unique_id=26799361]
+layout_mode = 2
+
+[node name="Effects" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=783072672]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Effects" unique_id=1821057612]
+layout_mode = 2
+text = "Effects volume"
+
+[node name="Effects" type="HSlider" parent="MarginContainer/VBoxContainer/Effects" unique_id=1370108411]
+layout_mode = 2
+
+[node name="UI" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=983076879]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/UI" unique_id=1692530640]
+layout_mode = 2
+text = "UI volume"
+
+[node name="UI" type="HSlider" parent="MarginContainer/VBoxContainer/UI" unique_id=348147069]
+layout_mode = 2
+
+[node name="Enviroment" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=977333602]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Enviroment" unique_id=888780550]
+layout_mode = 2
+text = "Enviroment volume"
+
+[node name="Enviroment" type="HSlider" parent="MarginContainer/VBoxContainer/Enviroment" unique_id=1880120762]
+layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1058413308]
+mix_target = 2
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Music/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Effects/Effects" to="." method="_on_effects_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/UI/UI" to="." method="_on_ui_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Enviroment/Enviroment" to="." method="_on_enviroment_value_changed"]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d0b6c268k7bpe"]
+
+[ext_resource type="Script" uid="uid://jn552ho3c3e0" path="res://technical/screpts/area_gamage.gd" id="1_5n6kx"]
+
+[node name="AreaGamage" type="Area2D" unique_id=1262248345]
+script = ExtResource("1_5n6kx")

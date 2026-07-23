@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://2ykal2ib6dd1"]
 
-[ext_resource type="Script" uid="uid://b2hs07k08o2yl" path="res://entities/screpts/player.gd" id="1_pmutf"]
+[ext_resource type="Script" uid="uid://b2hs07k08o2yl" path="res://entities/enemy/screpts/player.gd" id="1_pmutf"]
+[ext_resource type="PackedScene" uid="uid://c3ilemfb72wkc" path="res://GUI/screens/player_ui.tscn" id="2_36cqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 
@@ -8,7 +9,6 @@
 size = Vector2(40, 40)
 
 [node name="player" type="CharacterBody2D" unique_id=1310728911]
-position = Vector2(512, 284)
 script = ExtResource("1_pmutf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=830285594]
@@ -40,5 +40,9 @@ offset_bottom = 20.0
 [node name="combo" type="Timer" parent="." unique_id=1938785498]
 wait_time = 0.1
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1164282432]
+
+[node name="PlayerUI" parent="CanvasLayer" unique_id=865031701 instance=ExtResource("2_36cqw")]
 
 [connection signal="timeout" from="combo" to="." method="_on_combo_timeout"]
