@@ -7,9 +7,13 @@ size = Vector2(13, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_riqys"]
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_pmutf"]
+
 [node name="player" type="CharacterBody2D" unique_id=1310728911]
-collision_layer = 0
+z_index = 1
+collision_layer = 2
 script = ExtResource("1_pmutf")
+speed = 1000.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=830285594]
 offset_left = -6.0
@@ -60,6 +64,13 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=56579134]
 position = Vector2(0.5, -3.5)
 shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1420499210]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1180965671]
+stream = SubResource("AudioStreamPlaylist_pmutf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1439537868]
 
 [connection signal="timeout" from="combo" to="." method="_on_combo_timeout"]
 [connection signal="timeout" from="remainder_timer" to="." method="_on_remainder_timer_timeout"]
