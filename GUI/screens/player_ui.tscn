@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c3ilemfb72wkc"]
+
+[ext_resource type="PackedScene" uid="uid://dp2w8bdwglpgw" path="res://GUI/screens/health_bar.tscn" id="1_df437"]
+[ext_resource type="PackedScene" uid="uid://c4qpcjt2qsg6a" path="res://GUI/screens/timer.tscn" id="2_sgc4a"]
+[ext_resource type="PackedScene" uid="uid://b1jvof71dcft3" path="res://GUI/screens/hot_bar.tscn" id="3_h2rll"]
+
+[node name="PlayerUI" type="Control" unique_id=865031701]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=521855873]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthBar" parent="MarginContainer" unique_id=1865220646 instance=ExtResource("1_df437")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HotBar" parent="MarginContainer" unique_id=733358379 instance=ExtResource("3_h2rll")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=52960435]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Timer" parent="MarginContainer" unique_id=1090379589 instance=ExtResource("2_sgc4a")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0

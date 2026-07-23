@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dkgaf2k0e8x6l"]
+
+[ext_resource type="Script" uid="uid://b4o72gb88eaht" path="res://entities/enemy/screpts/health_component.gd" id="1_278l7"]
+
+[node name="HealthComponent" type="Node" unique_id=1758268569]
+script = ExtResource("1_278l7")

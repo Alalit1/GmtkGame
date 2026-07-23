@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b1jvof71dcft3"]
+
+[ext_resource type="Script" uid="uid://bw5wsmteqlkte" path="res://GUI/screpts/hot_bar.gd" id="1_yvew0"]
+
+[node name="HotBar" type="Control" unique_id=733358379]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yvew0")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1327468347]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=287927622]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer" unique_id=2059091927]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/NinePatchRect" unique_id=225432591]
+custom_minimum_size = Vector2(160, 70)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -70.0
+offset_right = 80.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/NinePatchRect" unique_id=782669983]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 4

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bugyqsotp8g4j"]
+
+[node name="PointGamage" type="Label" unique_id=232160991]
+offset_right = 40.0
+offset_bottom = 23.0
