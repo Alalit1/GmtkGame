@@ -14,6 +14,10 @@ config/name="GmtkGame"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+g="*uid://dso4ed6qoe06j"
+
 [display]
 
 window/size/viewport_width=640
