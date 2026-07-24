@@ -7,18 +7,14 @@ var target: Node2D = null
 var can_see_target := false
 
 
-func _ready():
-	vision.body_entered.connect(_on_body_entered)
-	vision.body_exited.connect(_on_body_exited)
-
-
-func _on_body_entered(body: Node2D):
+func _on_vision_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		print(body)
 		target = body
 		can_see_target = true
 
 
-func _on_body_exited(body: Node2D):
+func _on_vision_area_body_exited(body: Player) -> void:
 	if body == target:
 		target = null
 		can_see_target = false

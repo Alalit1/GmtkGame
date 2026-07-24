@@ -1,35 +1,26 @@
 class_name Item
-extends Area2D
+extends Node2D
 
-@export var item_data: ItemData
+@export var item_name: String = ""
+@export var max_uses: int = 1
+@export var uses: int = 1
 
-var player_in_range: bool = false
-var player: Node = null
-
-
-func _ready() -> void:
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
-
-
-func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("player"):
-		player_in_range = true
-		player = body
-
-
-func _on_body_exited(body: Node) -> void:
-	if body == player:
-		player_in_range = false
-		player = null
-
-
-func pickup() -> void:
-	if not player_in_range:
+func use() -> void:
+	if uses <= 0:
 		return
 
-	if player.has_method("add_item"):
-		var success: bool = player.add_item(item_data)
+	_on_use()
 
-		if success:
-			queue_free()
+	uses -= 1
+
+	if uses <= 0:
+		queue_free()
+
+
+func _on_use() -> void:
+	pass
+	
+#func pick_up(player) -> void:
+	
+	#if player.inventory.add_item(item_data):
+	#	queue_free()

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dg50rlj07cca2"]
 
 [ext_resource type="Script" uid="uid://bfj4ad11jbalb" path="res://GUI/screpts/settings.gd" id="1_n16i8"]
-[ext_resource type="AudioStream" uid="uid://dxbpncwrni3qd" path="res://assetes/sound/Button.mp3" id="2_438b1"]
 
 [node name="Settings" type="Control" unique_id=42141974]
 layout_mode = 3
@@ -50,6 +49,7 @@ text = "Master volume"
 
 [node name="Master" type="HSlider" parent="MarginContainer/VBoxContainer/Master" unique_id=1368402257]
 layout_mode = 2
+max_value = 10.0
 
 [node name="Music" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1874469927]
 layout_mode = 2
@@ -61,14 +61,14 @@ text = "Music volume"
 [node name="Music" type="HSlider" parent="MarginContainer/VBoxContainer/Music" unique_id=26799361]
 layout_mode = 2
 
-[node name="Effects" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=783072672]
+[node name="SFX" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=783072672]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Effects" unique_id=1821057612]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/SFX" unique_id=1821057612]
 layout_mode = 2
 text = "Effects volume"
 
-[node name="Effects" type="HSlider" parent="MarginContainer/VBoxContainer/Effects" unique_id=1370108411]
+[node name="SFX" type="HSlider" parent="MarginContainer/VBoxContainer/SFX" unique_id=1370108411]
 layout_mode = 2
 
 [node name="UI" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=983076879]
@@ -91,21 +91,13 @@ text = "Enviroment volume"
 [node name="Enviroment" type="HSlider" parent="MarginContainer/VBoxContainer/Enviroment" unique_id=1880120762]
 layout_mode = 2
 
-[node name="TestAudio" type="AudioStreamPlayer" parent="." unique_id=1058413308]
-stream = ExtResource("2_438b1")
-mix_target = 2
-
-[node name="UI" type="AudioStreamPlayer" parent="." unique_id=195618442]
-stream = ExtResource("2_438b1")
-mix_target = 2
-
 [connection signal="pressed" from="MarginContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="drag_ended" from="MarginContainer/VBoxContainer/Master/Master" to="." method="_on_master_drag_ended"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Master/Master" to="." method="_on_master_value_changed"]
 [connection signal="drag_ended" from="MarginContainer/VBoxContainer/Music/Music" to="." method="_on_music_drag_ended"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Music/Music" to="." method="_on_music_value_changed"]
-[connection signal="drag_ended" from="MarginContainer/VBoxContainer/Effects/Effects" to="." method="_on_effects_drag_ended"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/Effects/Effects" to="." method="_on_effects_value_changed"]
+[connection signal="drag_ended" from="MarginContainer/VBoxContainer/SFX/SFX" to="." method="_on_effects_drag_ended"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/SFX/SFX" to="." method="_on_sfx_value_changed"]
 [connection signal="drag_ended" from="MarginContainer/VBoxContainer/UI/UI" to="." method="_on_ui_drag_ended"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/UI/UI" to="." method="_on_ui_value_changed"]
 [connection signal="drag_ended" from="MarginContainer/VBoxContainer/Enviroment/Enviroment" to="." method="_on_enviroment_drag_ended"]

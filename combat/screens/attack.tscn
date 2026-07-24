@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c0flqwavqlvk7"]
+
+[ext_resource type="PackedScene" uid="uid://d0b6c268k7bpe" path="res://combat/screens/damage_zone.tscn" id="1_eknxo"]
+
+[node name="Attack" type="Node2D" unique_id=409358418]
+
+[node name="DamageZone" parent="." unique_id=1262248345 instance=ExtResource("1_eknxo")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=145494501]

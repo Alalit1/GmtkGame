@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://by51msn1ioda4"]
 
 [ext_resource type="PackedScene" uid="uid://dgjl5qp1ft07y" path="res://items/screens/base_item.tscn" id="1_ti5lg"]
+[ext_resource type="Script" uid="uid://icwec8he8u3o" path="res://items/screpts/scroll_fire_boll.gd" id="2_3xhto"]
 
 [node name="ScrollFireBoll" unique_id=1556851499 instance=ExtResource("1_ti5lg")]
+script = ExtResource("2_3xhto")
+damage_data = null
+projectile_scene = null

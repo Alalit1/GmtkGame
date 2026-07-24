@@ -19,13 +19,12 @@ func _ready() -> void:
 	
 func _physics_process(delta):
 	if navigation_agent.is_navigation_finished():
-		move_direction = Vector2.ZERO
-	else:
-		var next = navigation_agent.get_next_path_position()
-		move_direction = (
-			next - global_position
-		).normalized()
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
 
-	velocity = move_direction * current_speed
+	var next = navigation_agent.get_next_path_position()
+	var direction = global_position.direction_to(next)
 
+	velocity = direction * current_speed
 	move_and_slide()

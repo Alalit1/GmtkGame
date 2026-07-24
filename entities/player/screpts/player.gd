@@ -10,6 +10,7 @@ class_name Player
 @onready var stamina = player_data.speed
 @onready var max_stamina = player_data.speed
 
+var inventore = []
 var dash_cooldown := false
 var dashing := false
 var last_direction := Vector2(1,0)

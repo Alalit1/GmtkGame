@@ -35,7 +35,9 @@ func initialize(owner):
 	
 	for state in states.values():
 		state.brain = self
-
+	
+	state_machine.initialize(states)
+	
 	state_machine.change_state(states["idle"])
 	
 func update_blackboard():
@@ -47,10 +49,12 @@ func update_blackboard():
 		blackboard.last_known_position = sensors.target.global_position
 
 func update(delta):
+	update_blackboard()
 
-	var goal = planner.choose_goal(self)
+	var goal = planner.choose_goal(blackboard)
 
-	state_machine.set_goal(goal)
-	
+	state_machine.set_goal(goal)	
+
 func move_to(pos: Vector2):
+	print(pos)
 	npc.navigation_agent.target_position = pos
