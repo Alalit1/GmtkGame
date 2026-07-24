@@ -15,6 +15,7 @@ var combo := 9.0
 var can_dash = true
 var can_charge = true
 var can_combo = true
+var transition = false
 
 func _physics_process(delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
@@ -82,42 +83,52 @@ func _on_remainder_timer_timeout() -> void:
 	g.time -= 0.05
 	if stamina < max_stamina:
 		stamina += 0.25
-	if g.time == 100:
+	if g.time == 1000:
 		can_dash = false
 		max_hp = 90
 		hp = hp * 90 / 100
 		max_stamina = 95
 		stamina = stamina * 95 / 100
-	elif g.time == 80:
+	elif g.time == 800:
 		can_combo = false
 		max_hp = 80
 		hp = hp * 80 / 100
 		max_stamina = 90
 		stamina = stamina * 90 / 100
-	elif g.time == 60:
+	elif g.time == 600:
 		can_charge = false
 		max_hp = 70
 		hp = hp * 70 / 100
 		max_stamina = 85
 		stamina = stamina * 85 / 100
-	elif g.time == 60:
+	elif g.time == 400:
 		max_hp = 60
 		hp = hp * 60 / 100
 		max_stamina = 80
 		stamina = stamina * 80 / 100
 		speed = 90
-	elif g.time == 40:
+	elif g.time == 200:
 		max_hp = 50
 		hp = hp * 50 / 100
 		max_stamina = 75
 		stamina = stamina * 75 / 100
 		speed = 80
-	elif g.time == 20:
-		max_hp = 40
-		hp = hp * 40 / 100
-		max_stamina = 70
-		stamina = stamina * 70 / 100
-		speed = 70
 
 func _on_dash_cooldown_timeout() -> void:
 	dash_cooldown = false
+
+func exit():
+	if transition:
+		call_deferred("set_collision_mask_value", 1, true)
+		position = Vector2(320,340)
+		await get_tree().physics_frame
+		dashing = false
+		can_dash = true
+		transition = false
+		visible = true
+	else:
+		call_deferred("set_collision_mask_value", 1, false)
+		dashing = true
+		can_dash = false
+		transition = true
+		visible = false
