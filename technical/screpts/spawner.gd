@@ -1,11 +1,14 @@
 extends Node2D
 
+var enemys_count = ceili(float(g.room_finish) / 2)
+var spawn_data = {}
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
+func preparation(pos):
+	spawn_data[pos] = enemys_count
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func spawn(pos):
+	spawn_data[pos] -= 1
+	
