@@ -2,20 +2,29 @@ class_name EnemyData
 extends Resource
 
 @export_category("Characteristic")
+## здорове
 @export var health  : float = 100
+## скорость
 @export var speed : float = 50
+## ускорение
 @export var speed_up : float = 25
+## радийс зрения
 @export var detection_range : float = 100
 @export var demeanor : String
 ## вожможні механіка
 @export_group("Resistance")
-# вожможні механікі
+##
 @export var ph : float
+##
 @export var fire : float
+##
 @export var venom : float
+##
 @export var ice : float
+##
 @export var rock : float
 @export_category("Visuals")
+##
 @export var texture : Texture2D
 
 @export_category("Sounds")

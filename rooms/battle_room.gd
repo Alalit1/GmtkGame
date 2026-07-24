@@ -27,7 +27,7 @@ var tile_coords = {
 }
 
 func _ready():
-	g.connect("enemys_end", Callable(self, "open_the_doors"))
+	G.connect("enemys_end", Callable(self, "open_the_doors"))
 	rng.randomize()
 	grid.clear()
 	for y in height:

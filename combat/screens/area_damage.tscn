@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://d0b6c268k7bpe"]
-
-[ext_resource type="Script" uid="uid://jn552ho3c3e0" path="res://combat/screpts/area_damage.gd" id="1_tvnxp"]
-
-[node name="AreaDamage" type="Area2D" unique_id=1262248345]
-script = ExtResource("1_tvnxp")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]

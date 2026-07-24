@@ -1,16 +1,70 @@
 class_name Damage
 extends RefCounted
 
-var data: DamageData
- 
 
-var source
-var target
+func apply(damage_data: DamageData, target) -> void:
 
-var critical := false
+	match damage_data.damage_mode:
 
-var final_amount := 0.0
+		DamageMode.Value.INSTANT:
+			_apply_instant(
+				damage_data,
+				target
+			)
 
-var blocked := false
+		DamageMode.Value.PERIODIC:
+			_apply_periodic(
+				damage_data,
+				target
+			)
 
-var dodged := false
+		DamageMode.Value.DISTRIBUTED:
+			_apply_distributed(
+				damage_data,
+				target
+			)
+
+
+func _apply_instant(
+	damage_data: DamageData,
+	target
+) -> void:
+
+	var calculator := DamageCalculate.new()
+
+	var final_damage := calculator.calculate(
+		damage_data,
+		target
+	)
+
+	target.take_damage(final_damage)
+
+
+func _apply_periodic(
+	damage_data: DamageData,
+	target
+) -> void:
+
+	var effect := PeriodicDamage.new()
+
+	target.get_tree().current_scene.add_child(effect)
+
+	effect.apply(
+		damage_data,
+		target
+	)
+
+
+func _apply_distributed(
+	damage_data: DamageData,
+	target
+) -> void:
+
+	var effect := DistributedDamage.new()
+
+	target.get_tree().current_scene.add_child(effect)
+
+	effect.apply(
+		damage_data,
+		target
+	)

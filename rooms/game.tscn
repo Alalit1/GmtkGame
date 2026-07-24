@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://bbs8lsaelg8bq"]
 
-[ext_resource type="Script" uid="uid://c2us81764x628" path="res://rooms/main.gd" id="1_0xd5j"]
-[ext_resource type="PackedScene" uid="uid://chpd70hq4bpq5" path="res://rooms/battle_room.tscn" id="1_x4obk"]
-[ext_resource type="PackedScene" uid="uid://2ykal2ib6dd1" path="res://entities/screns/player.tscn" id="3_w0skf"]
+[ext_resource type="Script" uid="uid://c2us81764x628" path="res://rooms/game.gd" id="1_bffnh"]
+[ext_resource type="PackedScene" uid="uid://chpd70hq4bpq5" path="res://rooms/battle_room.tscn" id="2_iva0i"]
+[ext_resource type="PackedScene" uid="uid://2ykal2ib6dd1" path="res://entities/screns/player.tscn" id="3_fgjo0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0skf"]
 size = Vector2(40, 20)
 
-[node name="Main" type="Node2D" unique_id=90461513]
-script = ExtResource("1_0xd5j")
+[node name="Game" type="Node2D" unique_id=90461513]
+script = ExtResource("1_bffnh")
 
 [node name="exit" type="Area2D" parent="." unique_id=1037936340]
 position = Vector2(320, 10)
@@ -20,11 +20,11 @@ shape = SubResource("RectangleShape2D_w0skf")
 
 [node name="current_room" type="Node2D" parent="." unique_id=1975408798]
 
-[node name="BattleRoom" parent="current_room" unique_id=248276238 instance=ExtResource("1_x4obk")]
+[node name="BattleRoom" parent="current_room" unique_id=248276238 instance=ExtResource("2_iva0i")]
 
 [node name="next_room" type="Node2D" parent="." unique_id=1589830871]
 
-[node name="player" parent="." unique_id=1310728911 instance=ExtResource("3_w0skf")]
+[node name="player" parent="." unique_id=1310728911 instance=ExtResource("3_fgjo0")]
 position = Vector2(320, 340)
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

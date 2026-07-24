@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d0b6c268k7bpe"]
+
+[ext_resource type="Script" uid="uid://jn552ho3c3e0" path="res://combat/screpts/damage_zone.gd" id="1_rm0ug"]
+[ext_resource type="Resource" uid="uid://nxem1ymhxamf" path="res://combat/resurse/phtsical_ins.tres" id="2_50q74"]
+
+[node name="DamageZone" type="Area2D" unique_id=1262248345]
+script = ExtResource("1_rm0ug")
+damage_data = ExtResource("2_50q74")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

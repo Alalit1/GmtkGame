@@ -11,10 +11,19 @@ config_version=5
 [application]
 
 config/name="GmtkGame"
+run/main_scene="uid://ccry7c57bbhdd"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
 
+buses/default_bus_layout="uid://k5k04ivsbjgf"
+
+[autoload]
+
+SpawnManager="*uid://bystq8li4ed1v"
+ScreenManager="*uid://bggaro77tohpk"
+G="*uid://dso4ed6qoe06j"
 
 [display]
 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://2ykal2ib6dd1"]
 
-[ext_resource type="Script" uid="uid://b2hs07k08o2yl" path="res://entities/screpts/player.gd" id="1_pmutf"]
+[ext_resource type="Script" uid="uid://dx5cvfn04nc7u" path="res://entities/screpts/player.gd" id="1_pmutf"]
+[ext_resource type="PackedScene" uid="uid://c3ilemfb72wkc" path="res://GUI/screens/player_ui.tscn" id="2_36cqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(13, 7)
@@ -71,6 +72,10 @@ shape = SubResource("RectangleShape2D_bhunq")
 stream = SubResource("AudioStreamPlaylist_pmutf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1439537868]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=569645366]
+
+[node name="PlayerUI" parent="CanvasLayer" unique_id=865031701 instance=ExtResource("2_36cqw")]
 
 [connection signal="timeout" from="combo" to="." method="_on_combo_timeout"]
 [connection signal="timeout" from="remainder_timer" to="." method="_on_remainder_timer_timeout"]

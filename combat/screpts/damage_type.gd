@@ -1,7 +1,7 @@
 class_name DamageType
 extends RefCounted
 
-enum Value {
+enum Type {
 	PHYSICAL,
 	MAGICAL,
 	FIRE,
