@@ -5,23 +5,21 @@ extends Node2D
 var new_room = preload("res://rooms/screns/battle_room.tscn")
 
 func _ready() -> void:
-	SpawnManager.spawn_enemy("goblin",Vector2i(300,100))
 	var newroom = new_room.instantiate()
 	next_room.add_child(newroom)
 	newroom.position = Vector2(0,-360)
 
 func _on_exit_body_entered(body: Node2D) -> void:
 	G.room_finish += 1
-	#$player.visible = false
+	$player.exit()
 	var newroom = new_room.instantiate()
 	next_room.call_deferred("add_child", newroom)
 	newroom.position = Vector2(0,-360)
-	create_tween().tween_property(current_room.get_child(0), "position", Vector2(0, 360) ,1.5)
-	await create_tween().tween_property(next_room.get_child(0), "position", Vector2(0, 0) ,1.5).finished
+	create_tween().tween_property(current_room.get_child(0), "position", Vector2(0, 360) ,0.5)
+	await create_tween().tween_property(next_room.get_child(0), "position", Vector2(0, 0) ,0.5).finished
 	current_room.get_child(0).queue_free()
 	next_room.get_child(0).reparent(current_room)
-	$player.position = Vector2(320,340)
-	$player.visible = true
+	$player.exit()
 	if G.room_finish % 21 == 0:
 		pass
 	elif G.room_finish % 20 == 0:
