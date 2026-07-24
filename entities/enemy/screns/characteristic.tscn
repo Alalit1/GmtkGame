@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://drkn54u4sfekx"]
-
-[ext_resource type="Script" uid="uid://ctlw5yymrtwph" path="res://entities/enemy/screpts/characteristic.gd" id="1_trkgn"]
-
-[node name="Characteristic" type="Node" unique_id=1655018436]
-script = ExtResource("1_trkgn")

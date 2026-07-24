@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dp2w8bdwglpgw" path="res://GUI/screens/health_bar.tscn" id="1_df437"]
 [ext_resource type="PackedScene" uid="uid://c4qpcjt2qsg6a" path="res://GUI/screens/timer.tscn" id="2_sgc4a"]
 [ext_resource type="PackedScene" uid="uid://b1jvof71dcft3" path="res://GUI/screens/hot_bar.tscn" id="3_h2rll"]
+[ext_resource type="PackedScene" uid="uid://5d1bffsremqn" path="res://GUI/screens/stamiona_bar.tscn" id="4_emgdi"]
 
 [node name="PlayerUI" type="Control" unique_id=865031701]
 layout_mode = 3
@@ -30,6 +31,7 @@ size_flags_vertical = 4
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=52960435]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 
@@ -38,3 +40,7 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+
+[node name="StamionaBar" parent="MarginContainer" unique_id=1704712253 instance=ExtResource("4_emgdi")]
+visible = false
+layout_mode = 2

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://7lagbuh3glcu"]
 
 [ext_resource type="Script" uid="uid://mtb4sadusm08" path="res://entities/enemy/screpts/base_enemy.gd" id="1_apht4"]
-[ext_resource type="PackedScene" uid="uid://c7dq7vyar8i6c" path="res://entities/enemy/screns/component.tscn" id="1_wjgqd"]
+[ext_resource type="PackedScene" uid="uid://c7dq7vyar8i6c" path="res://component/screens/component.tscn" id="1_wjgqd"]
 [ext_resource type="PackedScene" uid="uid://1kmgtb3copny" path="res://technical/screens/brain.tscn" id="2_1dfty"]
-[ext_resource type="PackedScene" uid="uid://dkgaf2k0e8x6l" path="res://entities/enemy/screns/health_component.tscn" id="2_nnde4"]
-[ext_resource type="PackedScene" uid="uid://drkn54u4sfekx" path="res://entities/enemy/screns/characteristic.tscn" id="3_1dfty"]
-[ext_resource type="PackedScene" uid="uid://44st1rd7gj4u" path="res://entities/enemy/screns/hitbox_component.tscn" id="5_xx8a4"]
+[ext_resource type="PackedScene" uid="uid://dkgaf2k0e8x6l" path="res://component/screens/health_component.tscn" id="2_nnde4"]
+[ext_resource type="PackedScene" uid="uid://drkn54u4sfekx" path="res://component/screens/characteristic.tscn" id="3_1dfty"]
+[ext_resource type="PackedScene" uid="uid://44st1rd7gj4u" path="res://component/screens/hitbox_component.tscn" id="5_xx8a4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_khhxn"]
 

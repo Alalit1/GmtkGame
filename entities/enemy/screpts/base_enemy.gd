@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-@export var walk_speed := 120.0
-@export var run_speed := 220.0
+#@export var walk_speed := 120.0
+#@export var run_speed := 220.0
+@export var enemy_data : EnemyData
 
-@onready var ch := $Component/Characteristic
 @onready var brain: Brain = $Brain
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
@@ -11,8 +11,11 @@ var move_direction := Vector2.ZERO
 var current_speed := 0.0
 
 func _ready() -> void:
+	
+	$Component/Characteristic.setup(enemy_data)
+
 	brain.initialize(self)
-	$Sprite2D.texture = ch.texture
+	#$Sprite2D.texture = ch.texture
 	
 func _physics_process(delta):
 	if navigation_agent.is_navigation_finished():

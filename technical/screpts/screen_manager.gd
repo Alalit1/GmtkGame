@@ -12,7 +12,7 @@ enum Screen{
 const SCREENS := {
 	Screen.MAIN_MENU : "res://GUI/screens/main_menu.tscn",
 	Screen.SETTINGS : "res://GUI/screens/settings.tscn",
-	Screen.GAME : "res://rooms/game.tscn",
+	Screen.GAME : "res://rooms/screns/game.tscn",
 	#Screen.GAME_OVER : "res://screens/game_over.tscn",
 	#Screen.LOADING : "res://screens/loading.tscn",
 }

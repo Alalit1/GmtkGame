@@ -1,11 +1,15 @@
 extends CharacterBody2D
+class_name Player
 
-@export var speed := 100.0
-@export var max_hp := 100.0
-@export var hp := 100.0
-@export var damage := 20.0
-@export var stamina := 100.0
-@export var max_stamina := 100.0
+@export var player_data : PlayerData
+
+@onready var speed = player_data.speed
+@onready var max_hp = player_data.speed
+@onready var hp = player_data.speed
+@onready var damage = player_data.speed
+@onready var stamina = player_data.speed
+@onready var max_stamina = player_data.speed
+
 var dash_cooldown := false
 var dashing := false
 var last_direction := Vector2(1,0)

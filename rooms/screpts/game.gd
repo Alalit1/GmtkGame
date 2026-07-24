@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var next_room = $next_room
 @onready var current_room = $current_room
-var new_room = preload("res://rooms/battle_room.tscn")
+var new_room = preload("res://rooms/screns/battle_room.tscn")
 
 func _ready() -> void:
 	var newroom = new_room.instantiate()
@@ -26,5 +26,5 @@ func _on_exit_body_entered(body: Node2D) -> void:
 	elif G.room_finish % 20 == 0:
 		pass
 	else:
-		new_room = preload("res://rooms/battle_room.tscn")
+		new_room = preload("res://rooms/screns/battle_room.tscn")
 	

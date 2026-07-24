@@ -6,6 +6,7 @@ extends Resource
 @export var health  : float = 100
 ## скорость
 @export var speed : float = 50
+@export var damage: float = 20
 ## ускорение
 @export var speed_up : float = 25
 ## радийс зрения

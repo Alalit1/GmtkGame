@@ -1,12 +1,8 @@
 extends Node
 
-# Словник з усіма типами об'єктів для спавну
+
 var scenes: Dictionary = {
-	#"npc_trader": preload("res://scenes/npcs/trader.tscn"),
-	#"npc_trader": preload("res://scenes/npcs/trader.tscn"),
-	#"npc_adventure": preload("res://npc/screens/adventurer.tscn"),
-	#"npc_trader": preload("res://npc/screens/trader.tscn"),
-	#"enemy_goblin": preload("res://enamy/screen/goblin.tscn")
+	"enemy_goblin": preload("res://entities/enemy/screns/goblin.tscn")
 }
 
 func spawn(type: String, position: Vector2, parent: Node = null) -> Node:
@@ -26,9 +22,6 @@ func spawn(type: String, position: Vector2, parent: Node = null) -> Node:
 	
 	return instance
 
-# Зручні методи-обгортки
+
 func spawn_enemy(enemy_type: String, pos: Vector2):
 	return spawn("enemy_" + enemy_type, pos)
-
-func spawn_npc(npc_type: String, pos: Vector2):
-	return spawn("npc_" + npc_type, pos)

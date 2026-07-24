@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cdjhiqiuabncr"]
+
+[ext_resource type="PackedScene" uid="uid://7lagbuh3glcu" path="res://entities/enemy/screns/base_enemy.tscn" id="1_88bws"]
+[ext_resource type="Resource" uid="uid://deltl0o2jyovv" path="res://entities/enemy/resource/goblin.tres" id="2_2tpqi"]
+[ext_resource type="Texture2D" uid="uid://bp0dmknurnos5" path="res://icon.svg" id="3_2tpqi"]
+
+[node name="Goblin" unique_id=769011907 instance=ExtResource("1_88bws")]
+enemy_data = ExtResource("2_2tpqi")
+
+[node name="Sprite2D" parent="." index="6" unique_id=1362725045]
+visible = false
+texture = ExtResource("3_2tpqi")
+
+[node name="ColorRect" type="ColorRect" parent="." index="7" unique_id=390180322]
+offset_left = -18.0
+offset_top = -19.0
+offset_right = 22.0
+offset_bottom = 21.0
+color = Color(0.12163546, 0.3603648, 0, 1)

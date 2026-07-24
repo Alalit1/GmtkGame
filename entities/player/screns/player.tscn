@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://2ykal2ib6dd1"]
 
-[ext_resource type="Script" uid="uid://dx5cvfn04nc7u" path="res://entities/screpts/player.gd" id="1_pmutf"]
+[ext_resource type="Script" uid="uid://dx5cvfn04nc7u" path="res://entities/player/screpts/player.gd" id="1_pmutf"]
+[ext_resource type="Resource" uid="uid://r80jngu813w5" path="res://entities/player/resurse/Hero.tres" id="2_6ddth"]
 [ext_resource type="PackedScene" uid="uid://c3ilemfb72wkc" path="res://GUI/screens/player_ui.tscn" id="2_36cqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
@@ -14,7 +15,7 @@ size = Vector2(13, 7)
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_pmutf")
-speed = 1000.0
+player_data = ExtResource("2_6ddth")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=830285594]
 offset_left = -6.0
