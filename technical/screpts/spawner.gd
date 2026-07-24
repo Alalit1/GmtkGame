@@ -1,6 +1,6 @@
 extends Node2D
 
-var enemys_count = ceili(float(g.room_finish) / 2)
+var enemys_count = ceili(float(G.room_finish) / 2)
 var spawn_data = {}
 
 func _ready() -> void:
