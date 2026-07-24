@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://ccry7c57bbhdd"]
+
+[ext_resource type="Texture2D" uid="uid://cuecqb705lott" path="res://assetes/sprites/GMTK Game Jam 2026 Full Logo.png" id="1_ppkqy"]
+[ext_resource type="Script" uid="uid://cfxe736unt30c" path="res://GUI/screpts/main_menu.gd" id="1_x6eak"]
+[ext_resource type="AudioStream" uid="uid://dxbpncwrni3qd" path="res://assetes/sound/Button.mp3" id="3_mgq2c"]
+
+[node name="MainMenu" type="Control" unique_id=794908610]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+offset_transform_enabled = true
+script = ExtResource("1_x6eak")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1389649131]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.31431612, 0.31431612, 0.3143161, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1139535409]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Developer" type="Label" parent="MarginContainer" unique_id=1747324115]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Developed by AlaLit & Dimaprogramer"
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=1463597894]
+layout_mode = 2
+size_flags_stretch_ratio = 3.6
+offset_transform_enabled = true
+accessibility_region = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer" unique_id=956918684]
+layout_mode = 2
+
+[node name="StartGame" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1344599931]
+layout_mode = 2
+size_flags_vertical = 3
+text = "New Game"
+
+[node name="Settings" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=358385894]
+layout_mode = 2
+size_flags_vertical = 3
+offset_transform_enabled = true
+text = "Settings"
+
+[node name="Exit" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1057370914]
+layout_mode = 2
+text = "Exit"
+
+[node name="GameJamImage" type="TextureRect" parent="." unique_id=604702155]
+visible = false
+layout_mode = 0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 263.0
+offset_right = 93.0
+offset_bottom = 340.0
+grow_vertical = 0
+texture = ExtResource("1_ppkqy")
+expand_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1301177582]
+stream = ExtResource("3_mgq2c")
+bus = &"UI"
+
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

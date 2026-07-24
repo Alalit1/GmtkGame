@@ -4,16 +4,22 @@
 [ext_resource type="Script" uid="uid://bcapwrqdyptoy" path="res://technical/screpts/sensors.gd" id="2_q3mk2"]
 [ext_resource type="PackedScene" uid="uid://cktdbp7gookum" path="res://technical/screens/vision_area.tscn" id="2_u1uy1"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s1fef"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2tpqi"]
 
 [node name="Brain" type="Node" unique_id=1934205608]
 script = ExtResource("1_uejlh")
 
-[node name="Sensors" type="Node" parent="." unique_id=1229957096]
+[node name="Sensors" type="Node2D" parent="." unique_id=2023392885]
 script = ExtResource("2_q3mk2")
 
 [node name="VisionArea" parent="Sensors" unique_id=852957953 instance=ExtResource("2_u1uy1")]
+light_mask = 4
+visibility_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sensors/VisionArea" unique_id=634938440]
-shape = SubResource("CircleShape2D_s1fef")
-debug_color = Color(0.9843137, 0, 0, 0.41960785)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sensors/VisionArea" unique_id=97497036]
+shape = SubResource("CircleShape2D_2tpqi")
+debug_color = Color(0.9612065, 0.15991718, 0.3071807, 0.41960785)
+
+[connection signal="body_entered" from="Sensors/VisionArea" to="Sensors" method="_on_vision_area_body_entered"]
+[connection signal="body_exited" from="Sensors/VisionArea" to="Sensors" method="_on_vision_area_body_exited"]

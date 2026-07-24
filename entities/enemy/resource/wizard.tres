@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cvvg612p5ojwc"]
+
+[ext_resource type="Script" uid="uid://ctxmdtnnd74g7" path="res://entities/enemy/screpts/enemy_data.gd" id="1_ok2k7"]
+
+[resource]
+script = ExtResource("1_ok2k7")
+health = 10000.0
+detection_range = 150.0
+ph = 25.0
+fire = 25.0
+venom = 25.0
+ice = 25.0
+rock = 25.0
+metadata/_custom_type_script = "uid://ctxmdtnnd74g7"

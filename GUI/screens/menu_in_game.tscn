@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://c38vhawd5yt72"]
+
+[ext_resource type="Script" uid="uid://bonl16r6cn36x" path="res://GUI/screpts/menu_in_game.gd" id="1_05w4s"]
+
+[node name="MenuInGame" type="Control" unique_id=1616933284]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_05w4s")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1226003974]
+custom_minimum_size = Vector2(125, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -27.5
+offset_right = 39.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=1765774983]
+layout_mode = 2
+color = Color(0.20871013, 0.20871016, 0.20871013, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1787510730]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Continue" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1300394869]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Continue"
+
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1346667209]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Settings
+"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1726561651]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

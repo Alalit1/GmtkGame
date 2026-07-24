@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://5d1bffsremqn"]
+
+[node name="StamionaBar" type="TextureProgressBar" unique_id=1704712253]
+offset_right = 40.0
+offset_bottom = 40.0

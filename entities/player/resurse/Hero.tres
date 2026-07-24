@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="PlayerData" format=3 uid="uid://r80jngu813w5"]
+
+[ext_resource type="Script" uid="uid://p4mka6gvjy7c" path="res://entities/player/screpts/player_data.gd" id="1_14u6m"]
+
+[resource]
+script = ExtResource("1_14u6m")
+metadata/_custom_type_script = "uid://p4mka6gvjy7c"

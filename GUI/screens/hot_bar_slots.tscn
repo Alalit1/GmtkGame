@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dgncnshsbx0ww"]
+
+[node name="HotBarSlots" type="Panel" unique_id=846250135]
+custom_minimum_size = Vector2(64, 64)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1839671487]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
