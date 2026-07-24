@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://1v3g68nais64"]
-
-[ext_resource type="Script" uid="uid://dg324l5duyuvc" path="res://technical/screpts/area_interaction.gd" id="1_wsqyg"]
-
-[node name="AreaInteraction" type="Area2D" unique_id=1890933569]
-script = ExtResource("1_wsqyg")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
