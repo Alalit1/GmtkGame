@@ -1,6 +1,6 @@
 extends Control
 
-@onready var stream = $AudioStreamPlayer
+@onready var stream = $TestAudio
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -56,4 +56,5 @@ func _on_enviroment_drag_ended(value_changed: bool) -> void:
 
 
 func _on_back_pressed() -> void:
+	#$UI.play()
 	ScreenManager.change(ScreenManager.Screen.MAIN_MENU)

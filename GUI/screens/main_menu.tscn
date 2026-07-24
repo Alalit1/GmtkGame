@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cuecqb705lott" path="res://assetes/sprites/GMTK Game Jam 2026 Full Logo.png" id="1_ppkqy"]
 [ext_resource type="Script" uid="uid://cfxe736unt30c" path="res://GUI/screpts/main_menu.gd" id="1_x6eak"]
+[ext_resource type="AudioStream" uid="uid://dxbpncwrni3qd" path="res://assetes/sound/Button.mp3" id="3_mgq2c"]
 
 [node name="MainMenu" type="Control" unique_id=794908610]
 layout_mode = 3
@@ -78,6 +79,10 @@ offset_bottom = 340.0
 grow_vertical = 0
 texture = ExtResource("1_ppkqy")
 expand_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1301177582]
+stream = ExtResource("3_mgq2c")
+bus = &"UI"
 
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]

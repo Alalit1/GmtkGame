@@ -7,6 +7,8 @@ extends Resource
 ## скорость
 @export var speed : float = 50
 @export var damage: float = 20
+@export var stamina: float = 20
+@export var vision_area : float = 50
 ## ускорение
 @export var speed_up : float = 25
 ## радийс зрения

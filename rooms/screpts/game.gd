@@ -5,6 +5,7 @@ extends Node2D
 var new_room = preload("res://rooms/screns/battle_room.tscn")
 
 func _ready() -> void:
+	SpawnManager.spawn_enemy("goblin",Vector2i(300,100))
 	var newroom = new_room.instantiate()
 	next_room.add_child(newroom)
 	newroom.position = Vector2(0,-360)

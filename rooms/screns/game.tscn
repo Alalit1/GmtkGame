@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://c2us81764x628" path="res://rooms/screpts/game.gd" id="1_veyp2"]
 [ext_resource type="PackedScene" uid="uid://chpd70hq4bpq5" path="res://rooms/screns/battle_room.tscn" id="2_g8fwt"]
 [ext_resource type="PackedScene" uid="uid://2ykal2ib6dd1" path="res://entities/player/screns/player.tscn" id="3_dunk3"]
-[ext_resource type="PackedScene" uid="uid://cdjhiqiuabncr" path="res://entities/enemy/screns/goblin.tscn" id="4_1xjio"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0skf"]
 size = Vector2(40, 20)
@@ -27,9 +26,5 @@ shape = SubResource("RectangleShape2D_w0skf")
 
 [node name="player" parent="." unique_id=1310728911 instance=ExtResource("3_dunk3")]
 position = Vector2(320, 340)
-
-[node name="Goblin" parent="." unique_id=769011907 instance=ExtResource("4_1xjio")]
-visible = false
-position = Vector2(100, 194)
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

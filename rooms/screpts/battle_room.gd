@@ -27,7 +27,7 @@ var tile_coords = {
 }
 
 func _ready():
-	SpawnManager.spawn("goblin",Vector2i(100,100))
+	
 	G.connect("enemys_end", Callable(self, "open_the_doors"))
 	rng.randomize()
 	grid.clear()
