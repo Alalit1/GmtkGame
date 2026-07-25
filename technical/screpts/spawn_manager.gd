@@ -2,7 +2,8 @@ extends Node
 
 
 var scenes: Dictionary = {
-	"enemy_goblin": preload("res://entities/enemy/screns/goblin.tscn")
+	"enemy_goblin": preload("res://entities/enemy/screns/goblin.tscn"),
+	"enemy_skeleton": preload("res://entities/enemy/screns/skeleton.tscn")
 }
 
 func spawn(type: String, position: Vector2, parent: Node = null) -> Node:

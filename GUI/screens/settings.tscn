@@ -49,7 +49,9 @@ text = "Master volume"
 
 [node name="Master" type="HSlider" parent="MarginContainer/VBoxContainer/Master" unique_id=1368402257]
 layout_mode = 2
-max_value = 10.0
+max_value = 1.0
+step = 0.1
+value = 0.5
 
 [node name="Music" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1874469927]
 layout_mode = 2
@@ -60,6 +62,9 @@ text = "Music volume"
 
 [node name="Music" type="HSlider" parent="MarginContainer/VBoxContainer/Music" unique_id=26799361]
 layout_mode = 2
+max_value = 2.0
+step = 0.1
+value = 1.0
 
 [node name="SFX" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=783072672]
 layout_mode = 2
@@ -70,6 +75,9 @@ text = "Effects volume"
 
 [node name="SFX" type="HSlider" parent="MarginContainer/VBoxContainer/SFX" unique_id=1370108411]
 layout_mode = 2
+max_value = 2.0
+step = 0.1
+value = 1.5
 
 [node name="UI" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=983076879]
 layout_mode = 2
@@ -80,6 +88,9 @@ text = "UI volume"
 
 [node name="UI" type="HSlider" parent="MarginContainer/VBoxContainer/UI" unique_id=348147069]
 layout_mode = 2
+max_value = 2.0
+step = 0.1
+value = 1.5
 
 [node name="Enviroment" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=977333602]
 layout_mode = 2
@@ -90,6 +101,9 @@ text = "Enviroment volume"
 
 [node name="Enviroment" type="HSlider" parent="MarginContainer/VBoxContainer/Enviroment" unique_id=1880120762]
 layout_mode = 2
+max_value = 2.0
+step = 0.1
+value = 1.5
 
 [connection signal="pressed" from="MarginContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="drag_ended" from="MarginContainer/VBoxContainer/Master/Master" to="." method="_on_master_drag_ended"]

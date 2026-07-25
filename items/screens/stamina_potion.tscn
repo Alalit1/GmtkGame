@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bas3nwm0ngguh"]
+
+[ext_resource type="PackedScene" uid="uid://b6c47clc4mntd" path="res://items/screens/base_item.tscn" id="1_073wd"]
+[ext_resource type="Script" uid="uid://bbntsstqx26wu" path="res://items/screpts/stamina_potion.gd" id="2_gpbrx"]
+
+[node name="StaminaPotion" unique_id=803474339 instance=ExtResource("1_073wd")]
+script = ExtResource("2_gpbrx")

@@ -11,15 +11,19 @@ class_name ItemData
 
 @export_multiline var description: String = ""
 
+@export var uses: int = 1
+@export var max_uses: int = 1
+
 @export_category("Type")
 @export_enum("Potion", "Scroll") var item_type: int
 ## зелья
 @export_group("Potion")
 
 @export_enum("Health", "Stamina") var potion_type: int
-@export var time :float
-@export var count : float
-@export var interval : float
+#@export var time :float
+@export var amout_heal : float
+@export var stamina_amout : float
+#@export var interval : float
 ## свиткы
 @export_group("Scroll")
 @export_enum("Attack", "def") var scroll_type: int

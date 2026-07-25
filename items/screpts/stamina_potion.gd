@@ -1,20 +1,21 @@
-class_name HealthPotion
+class_name StaminaPotion
 extends BaseItem
+
 
 var uses
 var max_uses
-var heal_amout
+var stamina_amout
 
 func _ready() -> void:
 	max_uses = item_data.max_uses
-	heal_amout = item_data.amout_heal
+	stamina_amout = item_data.stamina_amout
 	
 
 func use(player) -> void:
 	if uses <= 0:
 		return
 		
-	player.heal(heal_amout)
+	player.stamina(stamina_amout)
 	uses -= 1
 
 	if uses <= 0:

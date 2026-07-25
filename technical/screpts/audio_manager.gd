@@ -12,6 +12,9 @@ extends Node
 @export var environment_sounds: Array[AudioStream]
 @export var master_sounds: Array[AudioStream]
 
+func _ready() -> void:
+	music_player.finished.connect(_on_music_finished)
+
 func play_sound(type: String,index: int) -> void:
 
 	if index < 0 or index >= ui_sounds.size():
@@ -33,4 +36,20 @@ func play_sound(type: String,index: int) -> void:
 		environment_player.stream = environment_sounds[index]
 		environment_player.play()
 	
+func play_music(index: int) -> void:
+	if index < 0 or index >= music_sounds.size():
+		return
+
+	if music_player.stream != music_sounds[index]:
+		music_player.stream = music_sounds[index]
+
+	music_player.play()
+
+func stop_music() -> void:
+	music_player.stop()
 	
+func pause_music() -> void:
+	music_player.stream_paused = true
+	
+func _on_music_finished() -> void:
+	music_player.play()	
