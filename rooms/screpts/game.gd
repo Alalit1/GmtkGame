@@ -11,6 +11,12 @@ func _ready() -> void:
 
 func _on_exit_body_entered(body: Node2D) -> void:
 	G.room_finish += 1
+	if G.room_finish % 21 == 0:
+		pass
+	elif G.room_finish - 1 % 2 == 0:
+		new_room = preload("res://rooms/screns/shop_room.tscn")
+	else:
+		new_room = preload("res://rooms/screns/battle_room.tscn")
 	$player.exit()
 	var newroom = new_room.instantiate()
 	next_room.call_deferred("add_child", newroom)
@@ -19,11 +25,6 @@ func _on_exit_body_entered(body: Node2D) -> void:
 	await create_tween().tween_property(next_room.get_child(0), "position", Vector2(0, 0) ,0.5).finished
 	current_room.get_child(0).queue_free()
 	next_room.get_child(0).reparent(current_room)
+	G.emit_signal("start_spawn")
 	$player.exit()
-	if G.room_finish % 21 == 0:
-		pass
-	elif G.room_finish % 2 == 0:
-		new_room = preload("res://rooms/screns/shop_room.tscn")
-	else:
-		new_room = preload("res://rooms/screns/battle_room.tscn")
 	
