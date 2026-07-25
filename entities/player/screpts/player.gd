@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 var inventore = []
 
 @export var speed := 100.0
@@ -20,6 +19,10 @@ var can_dash = true
 var can_charge = true
 var can_combo = true
 var transition = false
+var inf_stamina = false
+
+@onready var inf_stamina_timer = $inf_stamina_timer
+@onready var attack_area = $attack_area
 
 func _physics_process(delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
@@ -136,3 +139,13 @@ func exit():
 		can_dash = false
 		transition = true
 		visible = false
+
+func healing(heal):
+	hp += heal
+
+func infinity_stamina(count_down):
+	inf_stamina_timer.start(count_down)
+	inf_stamina = true
+
+func _on_inf_stamina_timer_timeout() -> void:
+	pass # Replace with function body.
