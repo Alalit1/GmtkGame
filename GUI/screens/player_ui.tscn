@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c3ilemfb72wkc"]
 
 [ext_resource type="PackedScene" uid="uid://dp2w8bdwglpgw" path="res://GUI/screens/health_bar.tscn" id="1_df437"]
+[ext_resource type="Script" uid="uid://dklf08hracq56" path="res://GUI/screpts/player_ui.gd" id="1_la6r2"]
 [ext_resource type="PackedScene" uid="uid://c4qpcjt2qsg6a" path="res://GUI/screens/timer.tscn" id="2_sgc4a"]
 [ext_resource type="PackedScene" uid="uid://b1jvof71dcft3" path="res://GUI/screens/hot_bar.tscn" id="3_h2rll"]
 [ext_resource type="PackedScene" uid="uid://5d1bffsremqn" path="res://GUI/screens/stamiona_bar.tscn" id="4_emgdi"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_la6r2")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=521855873]
 layout_mode = 1

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DamageData" format=3 uid="uid://vuiwslras8kk"]
+
+[ext_resource type="Script" uid="uid://dyd2ql0i4w7jh" path="res://combat/screpts/damage_data.gd" id="1_j6x3f"]
+
+[resource]
+script = ExtResource("1_j6x3f")
+speed = 175.0
+metadata/_custom_type_script = "uid://dyd2ql0i4w7jh"

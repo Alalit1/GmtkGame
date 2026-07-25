@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+class_name Player
+
+
 var inventore = []
 
 @export var speed := 100.0

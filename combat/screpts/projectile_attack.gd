@@ -3,6 +3,7 @@ class_name ProjectileAttack
 
 #@export var damage_data: DamageData
 #var target_move := Vector2(500, 300)
+var damage_data: DamageData
 var speed : float
 var damage: int
 var direction: Vector2
@@ -13,7 +14,7 @@ func setup(_damage_data: DamageData, _direction: Vector2):
 	direction = _direction
 
 func _process(delta: float) -> void:
-	position = position.move_toward(direction, speed * delta)
+	position += direction * speed * delta
 
 """
 способ использування

@@ -1,19 +1,37 @@
 [gd_scene format=3 uid="uid://cdjhiqiuabncr"]
 
 [ext_resource type="PackedScene" uid="uid://7lagbuh3glcu" path="res://entities/enemy/screns/base_enemy.tscn" id="1_88bws"]
-[ext_resource type="Resource" uid="uid://deltl0o2jyovv" path="res://entities/enemy/resource/goblin.tres" id="2_2tpqi"]
+[ext_resource type="Script" uid="uid://bkesfttcp6y2y" path="res://entities/enemy/screpts/goblin.gd" id="2_2tpqi"]
 [ext_resource type="Texture2D" uid="uid://bp0dmknurnos5" path="res://icon.svg" id="3_2tpqi"]
+[ext_resource type="Resource" uid="uid://fxsqact8yllu" path="res://combat/resurse/goblin.tres" id="3_l2k61"]
+[ext_resource type="PackedScene" uid="uid://d0b6c268k7bpe" path="res://combat/screens/damage_zone.tscn" id="4_y014r"]
+[ext_resource type="Resource" uid="uid://deltl0o2jyovv" path="res://entities/enemy/resource/goblin.tres" id="5_on6bo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1fef"]
+height = 32.0
 
 [node name="Goblin" unique_id=769011907 instance=ExtResource("1_88bws")]
-enemy_data = ExtResource("2_2tpqi")
+script = ExtResource("2_2tpqi")
+damage_data = ExtResource("3_l2k61")
+damage_area = ExtResource("4_y014r")
+enemy_data = ExtResource("5_on6bo")
 
-[node name="Sprite2D" parent="." index="6" unique_id=1362725045]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0" unique_id=1476551924]
+shape = SubResource("CapsuleShape2D_s1fef")
+debug_color = Color(0.9046533, 0.00013957918, 0.7508642, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." index="1" unique_id=154699743]
+one_shot = true
+
+[node name="Sprite2D" parent="." index="7" unique_id=1362725045]
 visible = false
 texture = ExtResource("3_2tpqi")
 
-[node name="ColorRect" type="ColorRect" parent="." index="7" unique_id=390180322]
+[node name="ColorRect" type="ColorRect" parent="." index="8" unique_id=390180322]
 offset_left = -11.0
 offset_top = -11.0
 offset_right = 12.0
 offset_bottom = 9.0
 color = Color(0.12163546, 0.3603648, 0, 1)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

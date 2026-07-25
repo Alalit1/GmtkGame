@@ -2,7 +2,7 @@ extends Node2D
 
 var enemys_count = ceili(float(G.room_finish) / 2)
 var spawn_data = {}
-var enemys_array = [preload("res://entities/enemy/screns/goblin.tscn")]
+var enemys_array = [preload("res://entities/enemy/screns/skeletron.tscn")]
 
 func _ready() -> void:
 	G.connect("enemy_dead", Callable(self, "spawn"))

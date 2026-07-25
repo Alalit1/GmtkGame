@@ -6,7 +6,9 @@ class_name BaseItem
 @onready var label = $Label
 
 var item_use := false
-var cost
+var cost = 10
+
+var player = null
 
 func _ready() -> void:
 	cost = item_data.cost
@@ -19,7 +21,11 @@ func _ready() -> void:
 
 func use(player) -> void:
 	pass
-	
+
+func _process(delta):
+	if Input.is_action_just_released("LKM") and item_use:
+		pick_up()
+
 func pick_up(player) -> void:
 	player.buy(cost)
 	if player.inventory.add_item(item_data):
@@ -32,3 +38,11 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	item_use = false
 	label.visible = false
+
+
+func _on_area_2d_body_entered(body: Player) -> void:
+	player = body
+
+
+func _on_area_2d_body_exited(body: Player) -> void:
+	player = body

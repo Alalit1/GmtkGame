@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://b6c47clc4mntd"]
 
 [ext_resource type="Script" uid="uid://smwlxyqiy6ok" path="res://items/screpts/base_item.gd" id="1_ayug1"]
+[ext_resource type="Resource" uid="uid://bhq3s2t8lm1" path="res://items/resurse/health_potion.tres" id="2_ii56r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_s1fef"]
+radius = 158.00316
+
 [node name="BaseItem" type="Area2D" unique_id=803474339]
 script = ExtResource("1_ayug1")
+item_data = ExtResource("2_ii56r")
 metadata/_custom_type_script = "uid://smwlxyqiy6ok"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1173956318]
@@ -18,5 +23,13 @@ debug_color = Color(0.6760888, 0.49539852, 1.92523e-07, 0.41960785)
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="Area2D" type="Area2D" parent="." unique_id=363496927]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1555842531]
+shape = SubResource("CircleShape2D_s1fef")
+debug_color = Color(0, 0.62271327, 0.54649323, 0.41960785)
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
