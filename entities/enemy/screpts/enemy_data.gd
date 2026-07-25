@@ -8,11 +8,12 @@ extends Resource
 @export var speed : float = 50
 @export var damage: float = 20
 @export var stamina: float = 20
-@export var vision_area : float = 50
+@export var vision_area : float = 100
+
 ## ускорение
 @export var speed_up : float = 25
 ## радийс зрения
-@export var detection_range : float = 100
+#@export var detection_range : float = 100
 @export var demeanor : String
 ## вожможні механіка
 @export_group("Resistance")

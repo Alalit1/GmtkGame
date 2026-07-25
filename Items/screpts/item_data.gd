@@ -5,7 +5,7 @@ class_name ItemData
 
 @export var texture: Texture2D
 
-@export var cost: int
+@export var cost: int = 10
 
 @export var name : String
 

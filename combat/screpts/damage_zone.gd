@@ -2,11 +2,12 @@ class_name DamageZone
 extends Area2D
 
 @export var damage_data: DamageData
-
+@onready var shape = $CollisionShape2D.shape
 var targets: Array[Node] = []
 
 
 func _ready() -> void:
+	shape.radius = damage_data.radius
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
