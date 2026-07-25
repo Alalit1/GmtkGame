@@ -20,12 +20,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="HealthBar" parent="MarginContainer" unique_id=1865220646 instance=ExtResource("1_df437")]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="HotBar" parent="MarginContainer" unique_id=733358379 instance=ExtResource("3_h2rll")]
 layout_mode = 2
@@ -36,11 +34,19 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="Timer" parent="MarginContainer" unique_id=1090379589 instance=ExtResource("2_sgc4a")]
-visible = false
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
 size_flags_vertical = 0
 
-[node name="StamionaBar" parent="MarginContainer" unique_id=1704712253 instance=ExtResource("4_emgdi")]
-visible = false
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1747006262]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="HealthBar" parent="MarginContainer/VBoxContainer" unique_id=1865220646 instance=ExtResource("1_df437")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="StamionaBar" parent="MarginContainer/VBoxContainer" unique_id=1704712253 instance=ExtResource("4_emgdi")]
 layout_mode = 2
