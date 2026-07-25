@@ -60,6 +60,10 @@ autostart = true
 wait_time = 0.5
 one_shot = true
 
+[node name="inf_stamina_timer" type="Timer" parent="." unique_id=2027455214]
+wait_time = 10.0
+one_shot = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1420499210]
 sprite_frames = SubResource("SpriteFrames_baarr")
 
@@ -71,3 +75,4 @@ stream = SubResource("AudioStreamPlaylist_pmutf")
 [connection signal="timeout" from="combo" to="." method="_on_combo_timeout"]
 [connection signal="timeout" from="remainder_timer" to="." method="_on_remainder_timer_timeout"]
 [connection signal="timeout" from="dash_cooldown" to="." method="_on_dash_cooldown_timeout"]
+[connection signal="timeout" from="inf_stamina_timer" to="." method="_on_inf_stamina_timer_timeout"]
