@@ -32,7 +32,10 @@ func _physics_process(delta: float) -> void:
 		move()
 		if Input.is_action_pressed("LKM"):
 			if can_charge:
-				if stamina >= 5:
+				if inf_stamina:
+					charge += 0.0167
+					stamina -= 0.0167
+				elif stamina >= 5:
 					charge += 0.0167
 					stamina -= 0.0167
 		if Input.is_action_just_pressed("LKM"):
@@ -44,7 +47,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("space"):
 		if can_dash == true:
 			if dash_cooldown == false:
-				if stamina >= 5:
+				if inf_stamina:
+					stamina -= 5
+					dash()
+				elif stamina >= 5:
 					stamina -= 5
 					dash()
 	move_and_slide()
@@ -148,4 +154,10 @@ func infinity_stamina(count_down):
 	inf_stamina = true
 
 func _on_inf_stamina_timer_timeout() -> void:
-	pass # Replace with function body.
+	inf_stamina = false
+
+func fireball_cast():
+	pass
+
+func alohomora_cast():
+	pass
