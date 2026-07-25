@@ -164,6 +164,8 @@ func exit():
 		can_dash = false
 		transition = true
 		visible = false
+		velocity *= 0
+		position = Vector2(320000,340000)
 
 func healing(heal):
 	hp += heal
@@ -227,3 +229,6 @@ func _animation_update(direction):
 			elif last_direction.y > 0:
 				player_sprite.flip_h = false
 				player_sprite.play("idle_down")
+
+func take_damage(dmg):
+	hp -= dmg
