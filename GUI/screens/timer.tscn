@@ -1,13 +1,25 @@
 [gd_scene format=3 uid="uid://c4qpcjt2qsg6a"]
 
+[ext_resource type="Script" uid="uid://da2ls6prqv6df" path="res://GUI/screpts/timer.gd" id="1_klbat"]
+
 [node name="Timer" type="Control" unique_id=1090379589]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_klbat")
 
 [node name="Panel" type="Panel" parent="." unique_id=1297897085]
 custom_minimum_size = Vector2(75, 25)
 layout_mode = 1
-offset_right = 50.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -75.0
+offset_bottom = 25.0
+grow_horizontal = 0
 
 [node name="Label" type="Label" parent="Panel" unique_id=1817266979]
 layout_mode = 1
