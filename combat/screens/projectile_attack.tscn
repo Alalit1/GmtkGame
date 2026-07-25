@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bnywruonepxr6"]
+
+[ext_resource type="Script" uid="uid://b2f1i35sboqj2" path="res://combat/screpts/projectile_attack.gd" id="1_lvjva"]
+[ext_resource type="PackedScene" uid="uid://d0b6c268k7bpe" path="res://combat/screens/damage_zone.tscn" id="2_1w366"]
+
+[node name="ProjectileAttack" type="Node2D" unique_id=615787375]
+script = ExtResource("1_lvjva")
+
+[node name="DamageZone" parent="." unique_id=1262248345 instance=ExtResource("2_1w366")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=330411116]
