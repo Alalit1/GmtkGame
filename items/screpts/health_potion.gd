@@ -5,9 +5,11 @@ var uses
 var max_uses
 var heal_amout
 
+
 func _ready() -> void:
 	max_uses = item_data.max_uses
 	heal_amout = item_data.amout_heal
+
 	
 
 func use(player) -> void:

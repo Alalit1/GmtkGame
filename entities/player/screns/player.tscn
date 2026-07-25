@@ -9,11 +9,7 @@ size = Vector2(13, 7)
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_pmutf"]
 
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1fef"]
-
 [node name="player" type="CharacterBody2D" unique_id=1310728911 groups=["player"]]
-
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_3df6a")
