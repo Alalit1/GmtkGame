@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://blt537l8ccy4l"]
+
+[ext_resource type="PackedScene" uid="uid://b6c47clc4mntd" path="res://items/screens/base_item.tscn" id="1_csdt1"]
+[ext_resource type="Script" path="res://items/screpts/scroll_open.gd" id="2_g1l0u"]
+
+[node name="ScrollOpen" unique_id=803474339 instance=ExtResource("1_csdt1")]
+script = ExtResource("2_g1l0u")
