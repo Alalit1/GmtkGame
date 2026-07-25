@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://chpd70hq4bpq5"]
+[gd_scene format=3 uid="uid://cjwv25td8cucn"]
 
 [ext_resource type="Script" uid="uid://cxfoto23cgoff" path="res://rooms/screpts/shop.gd" id="1_t088h"]
 [ext_resource type="Texture2D" uid="uid://qqcf53yopo7x" path="res://assetes/sprites/tiles.png" id="2_byagi"]
