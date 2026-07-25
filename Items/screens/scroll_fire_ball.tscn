@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dpa518khrg6tx"]
+
+[ext_resource type="PackedScene" uid="uid://b6c47clc4mntd" path="res://items/screens/base_item.tscn" id="1_k0vdu"]
+[ext_resource type="Script" path="res://items/screpts/scroll_fire_ball.gd" id="2_jjlgc"]
+
+[node name="ScrollFireBall" unique_id=803474339 instance=ExtResource("1_k0vdu")]
+script = ExtResource("2_jjlgc")
