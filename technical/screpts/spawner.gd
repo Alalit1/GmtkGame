@@ -20,6 +20,12 @@ func spawn(pos):
 		get_parent().add_child(enemy)
 		enemy.position = pos
 		spawn_data[pos] -= 1
+	var spawners_count = 0
+	for spawners in spawn_data.values():
+		if spawners == 0:
+			spawners_count += 1
+	if spawners_count == 4:
+		G.emit_signal("enemys_end")
 
 func first_spawn():
 	for i in spawn_data:
