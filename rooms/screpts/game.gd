@@ -22,8 +22,8 @@ func _on_exit_body_entered(body: Node2D) -> void:
 	$player.exit()
 	if G.room_finish % 21 == 0:
 		pass
-	elif G.room_finish % 20 == 0:
-		pass
+	elif G.room_finish % 2 == 0:
+		new_room = preload("res://rooms/screns/shop_room.tscn")
 	else:
 		new_room = preload("res://rooms/screns/battle_room.tscn")
 	
