@@ -22,11 +22,9 @@ func spawn(pos):
 		spawn_data[pos] -= 1
 
 func first_spawn():
-	print(spawn_data)
 	for i in spawn_data:
 		var enemy_load = enemys_array.pick_random()
 		var enemy = enemy_load.instantiate()
 		get_parent().add_child(enemy)
 		enemy.position = i
 		spawn_data[i] -= 1
-	print(spawn_data)
