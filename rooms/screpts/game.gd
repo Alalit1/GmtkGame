@@ -13,7 +13,7 @@ func _on_exit_body_entered(body: Node2D) -> void:
 	G.room_finish += 1
 	if G.room_finish % 21 == 0:
 		pass
-	elif G.room_finish - 1 % 2 == 0:
+	elif G.room_finish + 1 % 2 == 0:
 		new_room = preload("res://rooms/screns/shop_room.tscn")
 	else:
 		new_room = preload("res://rooms/screns/battle_room.tscn")
