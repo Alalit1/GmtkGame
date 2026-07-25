@@ -14,11 +14,11 @@ func _on_vision_area_body_entered(body: Node2D) -> void:
 		can_see_target = true
 
 
+"""
 func _on_vision_area_body_exited(body: Player) -> void:
 	if body == target:
 		target = null
 		can_see_target = false
-"""
 var found_list: Array[Node2D] = []
 
 signal found(body: Node2D)
