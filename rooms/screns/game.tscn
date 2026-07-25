@@ -11,7 +11,7 @@ size = Vector2(40, 20)
 script = ExtResource("1_veyp2")
 
 [node name="exit" type="Area2D" parent="." unique_id=1037936340]
-position = Vector2(320, 11)
+position = Vector2(320, 10)
 collision_layer = 0
 collision_mask = 2
 
