@@ -335,8 +335,8 @@ animations = [{
 [node name="player" type="CharacterBody2D" unique_id=1310728911 groups=["player"]]
 z_index = 1
 position = Vector2(17, 19)
-scale = Vector2(2, 2)
 collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_3df6a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2100578888]
