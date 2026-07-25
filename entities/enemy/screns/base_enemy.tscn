@@ -14,8 +14,6 @@
 [node name="BaseEnemy" type="CharacterBody2D" unique_id=769011907]
 script = ExtResource("1_apht4")
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=510019299]
-
 [node name="Brain" parent="." unique_id=1934205608 instance=ExtResource("2_1dfty")]
 
 [node name="Component" parent="." unique_id=1726308284 instance=ExtResource("1_wjgqd")]
