@@ -352,13 +352,6 @@ collision_layer = 0
 position = Vector2(12.5, 2.9812213e-08)
 shape = SubResource("RectangleShape2D_riqys")
 
-[node name="ColorRect" type="ColorRect" parent="attack_area/CollisionShape2D" unique_id=215052402]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
-metadata/_edit_use_anchors_ = true
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1620627016]
 limit_left = 0
 limit_top = 0
