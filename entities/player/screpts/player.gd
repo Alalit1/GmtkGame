@@ -31,6 +31,7 @@ var inf_stamina = false
 @onready var player_sounds = $AudioStreamPlayer2D
 
 func _physics_process(delta: float) -> void:
+	G.player_position = global_position
 	var mouse_pos = get_global_mouse_position()
 	var direction = global_position.angle_to_point(mouse_pos)
 	$attack_area.global_rotation = direction
@@ -118,31 +119,31 @@ func _on_remainder_timer_timeout() -> void:
 	G.time -= 0.05
 	if stamina < max_stamina:
 		stamina += 0.25
-	if G.time == 1000:
+	if G.time == 500:
 		can_dash = false
 		max_hp = 90
 		hp = hp * 90 / 100
 		max_stamina = 95
 		stamina = stamina * 95 / 100
-	elif G.time == 800:
+	elif G.time == 400:
 		can_combo = false
 		max_hp = 80
 		hp = hp * 80 / 100
 		max_stamina = 90
 		stamina = stamina * 90 / 100
-	elif G.time == 600:
+	elif G.time == 300:
 		can_charge = false
 		max_hp = 70
 		hp = hp * 70 / 100
 		max_stamina = 85
 		stamina = stamina * 85 / 100
-	elif G.time == 400:
+	elif G.time == 200:
 		max_hp = 60
 		hp = hp * 60 / 100
 		max_stamina = 80
 		stamina = stamina * 80 / 100
 		speed = 90
-	elif G.time == 200:
+	elif G.time == 100:
 		max_hp = 50
 		hp = hp * 50 / 100
 		max_stamina = 75
@@ -235,3 +236,6 @@ func _animation_update(direction):
 
 func take_damage(dmg):
 	hp -= dmg
+	if hp <= 0:
+		G.time = 600
+		G.room_finish = 1
