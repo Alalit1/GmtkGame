@@ -1,7 +1,16 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://doe40ufdbc55w"]
 
 [ext_resource type="Script" uid="uid://cgwq8btxfgioo" path="res://items/screpts/item_data.gd" id="1_ljaxh"]
+[ext_resource type="Texture2D" uid="uid://dae50a0uw2wlb" path="res://assetes/sprites/object_atlas.png" id="2_0a0ty"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bqik"]
+atlas = ExtResource("2_0a0ty")
+region = Rect2(560, 10, 32, 32)
 
 [resource]
 script = ExtResource("1_ljaxh")
+texture = SubResource("AtlasTexture_4bqik")
+cost = 120
+name = "Lockpicking Scroll"
+description = "Opens a door for free."
 metadata/_custom_type_script = "uid://cgwq8btxfgioo"

@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://ic7r3ejgfm12"]
 
-[ext_resource type="PackedScene" uid="uid://b6c47clc4mntd" path="res://Items/screens/base_item.tscn" id="1_88rlf"]
-[ext_resource type="Script" uid="uid://brbgmysg07mmb" path="res://Items/screpts/health_potion.gd" id="2_d75nc"]
-[ext_resource type="Resource" uid="uid://bhq3s2t8lm1" path="res://Items/resurse/health_potion.tres" id="3_esfyt"]
+[ext_resource type="PackedScene" uid="uid://b6c47clc4mntd" path="res://items/screens/base_item.tscn" id="1_88rlf"]
+[ext_resource type="Script" uid="uid://brbgmysg07mmb" path="res://items/screpts/health_potion.gd" id="2_d75nc"]
 
 [node name="HealthPotion" unique_id=803474339 instance=ExtResource("1_88rlf")]
+collision_mask = 16
 script = ExtResource("2_d75nc")
-item_data = ExtResource("3_esfyt")
+
+[node name="Label" parent="CanvasLayer" parent_id_path=PackedInt32Array(2022585543) index="0" unique_id=1402343946]
+theme_override_font_sizes/font_size = 6

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dp2w8bdwglpgw"]
 
 [ext_resource type="Texture2D" uid="uid://8qde58hd0urm" path="res://assetes/sprites/UI_atlase.png" id="1_1eakb"]
+[ext_resource type="Script" uid="uid://c0tn3374xsa14" path="res://GUI/screpts/health_bar.gd" id="2_pjbce"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1fef"]
 atlas = ExtResource("1_1eakb")
@@ -10,3 +11,9 @@ region = Rect2(2, 2, 64, 32)
 offset_right = 64.0
 offset_bottom = 32.0
 texture_under = SubResource("AtlasTexture_s1fef")
+script = ExtResource("2_pjbce")
+
+[node name="Label" type="Label" parent="." unique_id=462956814]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

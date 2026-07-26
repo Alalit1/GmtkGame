@@ -2,22 +2,17 @@
 
 [ext_resource type="Script" uid="uid://b2f1i35sboqj2" path="res://combat/screpts/projectile_attack.gd" id="1_lvjva"]
 [ext_resource type="PackedScene" uid="uid://d0b6c268k7bpe" path="res://combat/screens/damage_zone.tscn" id="2_1w366"]
+[ext_resource type="Resource" uid="uid://vuiwslras8kk" path="res://combat/resurse/arrow.tres" id="3_1w366"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s1fef"]
 
 [node name="ProjectileAttack" type="Node2D" unique_id=615787375]
-light_mask = 4
-visibility_layer = 15
 script = ExtResource("1_lvjva")
 
 [node name="DamageZone" parent="." unique_id=1262248345 instance=ExtResource("2_1w366")]
-light_mask = 8
-visibility_layer = 15
+damage_data = ExtResource("3_1w366")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DamageZone" unique_id=479451164]
-visibility_layer = 7
 shape = SubResource("CircleShape2D_s1fef")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=330411116]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=695415195]

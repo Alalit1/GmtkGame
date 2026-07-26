@@ -1,9 +1,9 @@
 extends Resource
 class_name ItemData
 
-@export var id : int
-
-@export var texture: Texture2D
+@export var item_id: String
+@export var item_scene: PackedScene
+@export var texture: AtlasTexture
 
 @export var cost: int = 10
 

@@ -1,7 +1,21 @@
 [gd_scene format=3 uid="uid://dpa518khrg6tx"]
 
 [ext_resource type="PackedScene" uid="uid://b6c47clc4mntd" path="res://items/screens/base_item.tscn" id="1_k0vdu"]
-[ext_resource type="Script" path="res://items/screpts/scroll_fire_ball.gd" id="2_jjlgc"]
+[ext_resource type="Script" uid="uid://icwec8he8u3o" path="res://items/screpts/scroll_fire_boll.gd" id="2_ba5pb"]
+[ext_resource type="Resource" uid="uid://0d7ft2ebld5r" path="res://combat/resurse/fire_ball.tres" id="3_1avoa"]
+[ext_resource type="PackedScene" uid="uid://bnywruonepxr6" path="res://combat/screens/projectile_attack.tscn" id="4_npuxv"]
+[ext_resource type="Resource" uid="uid://bqlyp1dus5hc2" path="res://items/resurse/scroll_fire_boll.tres" id="5_um0qm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_igp5t"]
 
 [node name="ScrollFireBall" unique_id=803474339 instance=ExtResource("1_k0vdu")]
-script = ExtResource("2_jjlgc")
+script = ExtResource("2_ba5pb")
+damage_data = ExtResource("3_1avoa")
+projectile_scene = ExtResource("4_npuxv")
+item_data = ExtResource("5_um0qm")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1173956318]
+shape = SubResource("CircleShape2D_igp5t")
+
+[node name="Label" parent="CanvasLayer" parent_id_path=PackedInt32Array(2022585543) index="0" unique_id=1402343946]
+theme_override_font_sizes/font_size = 6

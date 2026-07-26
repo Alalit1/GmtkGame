@@ -5,9 +5,16 @@ extends Node2D
 var new_room = preload("res://rooms/screns/shop_room.tscn")
 
 func _ready() -> void:
+	
 	var newroom = new_room.instantiate()
 	next_room.add_child(newroom)
 	newroom.position = Vector2(0,-360)
+
+func _process(delta):
+	
+	if TimeGlobal.time > 0:
+		TimeGlobal.time -= delta
+		
 
 func _on_exit_body_entered(body: Node2D) -> void:
 	G.room_finish += 1

@@ -1,20 +1,37 @@
 class_name DamageZone
 extends Area2D
 
+signal hit(body)
 @export var damage_data: DamageData
 @onready var shape = $CollisionShape2D.shape
 var targets: Array[Node] = []
 
 
 func _ready() -> void:
-	shape.radius = damage_data.radius
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
 
-func _on_body_entered(body: Node) -> void:
+	await get_tree().create_timer(0.2).timeout
+	queue_free()
+	shape.radius = 10
+
+func initialize(data: DamageData):
+	damage_data = data
+	
+
+	var circle := $CollisionShape2D.shape as CircleShape2D
+	if circle == null:
+		push_error("У CollisionShape2D не назначен CircleShape2D")
+		return
+
+	circle.radius = damage_data.radius
+
+func _on_body_entered(body: CharacterBody2D) -> void:
+	print("test",body)
 	if body.has_method("take_damage"):
+		print("test",body)
 		targets.append(body)
-
+		apply_damage()
+		
+	hit.emit(body)
 
 func _on_body_exited(body: Node) -> void:
 	if body in targets:
@@ -22,7 +39,8 @@ func _on_body_exited(body: Node) -> void:
 
 
 func apply_damage() -> void:
+	print("test")
 	var damage := Damage.new()
 
 	for target in targets:
-		damage.apply(damage_data, target)
+		damage.apply_damage(damage_data, target)
