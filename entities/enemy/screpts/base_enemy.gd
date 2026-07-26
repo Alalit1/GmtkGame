@@ -12,6 +12,8 @@ class_name BaseEnemy
 var move_direction := Vector2.ZERO
 var current_speed := 0.0
 
+var spawn_position = Vector2.ZERO
+
 func _ready() -> void:
 	
 	$Component/Characteristic.setup(enemy_data)
