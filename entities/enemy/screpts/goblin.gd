@@ -3,6 +3,7 @@ extends BaseEnemy
 @export var damage_data : DamageData 
 @export var damage_area: PackedScene
 @onready var timer: Timer = $Timer
+@onready var sprite = $AnimatedSprite2D
 var amount_attack = 0
 var bullet: Node
 var health 
@@ -23,17 +24,43 @@ func _physics_process(_delta):
 		velocity = Vector2.ZERO
 		if !is_instance_valid(bullet):
 			attack(damage_data, distance,target_point)
+			var direction = global_position.angle_to_point(vision.target.global_position)
+			if direction >= -PI/4 and direction < PI / 4:
+				sprite.play("attack_left")
+				sprite.flip_h = true
+			elif direction >= 3 * PI/4 or direction <= -3 * PI / 4:
+				sprite.play("attack_left")
+				sprite.flip_h = false
+			elif direction >= -3 * PI/4 and direction < -PI / 4:
+				sprite.play("attack_up")
+				sprite.flip_h = false
+			elif direction >= PI/4 and direction < 3 * PI / 4:
+				sprite.play("attack_down")
+				sprite.flip_h = false
 	else:
 		
 		var direction = global_position.direction_to(vision.target.global_position)
 		velocity = direction * enemy_data.speed
-	
-	move_and_slide()
+		direction = global_position.angle_to_point(vision.target.global_position)
+		if direction >= -PI/4 and direction < PI / 4:
+			sprite.play("walk_left")
+			sprite.flip_h = true
+		elif direction >= 3 * PI/4 or direction <= -3 * PI / 4:
+			sprite.play("walk_left")
+			sprite.flip_h = false
+		elif direction >= -3 * PI/4 and direction < -PI / 4:
+			sprite.play("walk_up")
+			sprite.flip_h = false
+		elif direction >= PI/4 and direction < 3 * PI / 4:
+			sprite.play("walk_down")
+			sprite.flip_h = false
+		move_and_slide()
 
 func take_damage(amout):
 	health = -amout
 	if health <= 0 :
 		self.queue_free()
+		G.emit_signal("enemy_dead", spawn_position)
 
 func attack(damage_data:DamageData, direction, pos: Vector2):
 	if is_instance_valid(bullet):
