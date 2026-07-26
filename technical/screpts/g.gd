@@ -3,6 +3,10 @@ extends Node
 signal enemys_end
 signal enemy_dead
 signal start_spawn
+signal boss_cast
 
-var time = 1200.0
-var room_finish = 1
+var free_cells = []
+var time = 600.0
+var room_finish = 19
+var player_position = Vector2.ZERO
+var boss = false

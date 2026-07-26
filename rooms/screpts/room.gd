@@ -29,7 +29,6 @@ var tile_coords = {
 func _ready():
 	G.connect("enemys_end", Callable(self, "enemys_end"))
 	rng.randomize()
-	grid.clear()
 	for y in range(HEIGHT):
 		grid.append([])
 		for x in range(WIDTH):
@@ -41,11 +40,14 @@ func _ready():
 	var spawners = spawn_spawners()
 	for spawner in spawners:
 		connect_to_passages(spawner)
-	tilemap.clear()
 	for y in range(HEIGHT):
 		for x in range(WIDTH):
 			var atlas_coord = tile_coords[grid[y][x]]
-			tilemap.set_cell(0, Vector2i(x,y), SOURCE_ID, atlas_coord)
+			tilemap.set_cell(0, Vector2i(x, y), SOURCE_ID, atlas_coord)
+	for y in range(1, HEIGHT-1):
+		for x in range(1,WIDTH-1):
+			if grid[y][x] == FLOOR:
+				G.free_cells.append(Vector2(x, y) * 20 + Vector2(10, 10))
 
 func enemys_end():
 	grid[0][15] = PASSAGE

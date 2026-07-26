@@ -25,11 +25,13 @@ func _ready() -> void:
 func use(player) -> void:
 	pass
 
+
 func _process(_delta: float) -> void:
 	if player != null:
 		label.visible = true
 
 	if player != null and Input.is_action_just_pressed("LK"):
+
 		pick_up(player)
 
 func pick_up(player) -> void:
