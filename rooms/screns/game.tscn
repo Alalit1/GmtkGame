@@ -8,6 +8,7 @@
 size = Vector2(40, 20)
 
 [node name="Game" type="Node2D" unique_id=90461513]
+y_sort_enabled = true
 script = ExtResource("1_veyp2")
 
 [node name="exit" type="Area2D" parent="." unique_id=1037936340]
@@ -25,6 +26,6 @@ shape = SubResource("RectangleShape2D_w0skf")
 [node name="next_room" type="Node2D" parent="." unique_id=1589830871]
 
 [node name="player" parent="." unique_id=1310728911 instance=ExtResource("3_dunk3")]
-position = Vector2(320, 340)
+position = Vector2(320, 332)
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

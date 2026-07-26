@@ -6,100 +6,12 @@
 [ext_resource type="Resource" uid="uid://fxsqact8yllu" path="res://combat/resurse/goblin.tres" id="3_l2k61"]
 [ext_resource type="PackedScene" uid="uid://d0b6c268k7bpe" path="res://combat/screens/damage_zone.tscn" id="4_y014r"]
 [ext_resource type="Resource" uid="uid://deltl0o2jyovv" path="res://entities/enemy/resource/goblin.tres" id="5_on6bo"]
-[ext_resource type="Texture2D" uid="uid://dae50a0uw2wlb" path="res://assetes/sprites/object_atlas.png" id="6_y014r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1fef"]
 height = 32.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_on6bo"]
-atlas = ExtResource("6_y014r")
-region = Rect2(1, 323, 46, 46)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y5lhi"]
-atlas = ExtResource("6_y014r")
-region = Rect2(47, 323, 46, 46)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bdygk"]
-atlas = ExtResource("6_y014r")
-region = Rect2(93, 323, 46, 46)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pnkaa"]
-atlas = ExtResource("6_y014r")
-region = Rect2(1, 369, 46, 46)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6cubk"]
-atlas = ExtResource("6_y014r")
-region = Rect2(47, 369, 46, 46)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a4qhu"]
-atlas = ExtResource("6_y014r")
-region = Rect2(93, 369, 46, 46)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3xnr3"]
-atlas = ExtResource("6_y014r")
-region = Rect2(1, 415, 46, 46)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gjnr3"]
-atlas = ExtResource("6_y014r")
-region = Rect2(47, 415, 46, 46)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2qakg"]
-atlas = ExtResource("6_y014r")
-region = Rect2(93, 415, 46, 46)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_l2k61"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_on6bo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y5lhi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bdygk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pnkaa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6cubk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a4qhu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3xnr3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gjnr3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2qakg")
-}],
-"loop": 1,
-"name": &"Idle",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": 1,
-"name": &"attack",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": 1,
-"name": &"dead",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": 1,
-"name": &"move",
-"speed": 5.0
-}]
-
 [node name="Goblin" unique_id=769011907 instance=ExtResource("1_88bws")]
-collision_layer = 4
-collision_mask = 15
+collision_mask = 4
 script = ExtResource("2_2tpqi")
 damage_data = ExtResource("3_l2k61")
 damage_area = ExtResource("4_y014r")
@@ -112,16 +24,18 @@ debug_color = Color(0.9046533, 0.00013957918, 0.7508642, 0.41960785)
 [node name="Timer" type="Timer" parent="." index="1" unique_id=154699743]
 one_shot = true
 
-[node name="AnimatedSprite2D" parent="." index="5" unique_id=1861014263]
-sprite_frames = SubResource("SpriteFrames_l2k61")
-animation = &"Idle"
+[node name="VisionArea" parent="." index="2" unique_id=852957953]
+collision_layer = 0
+collision_mask = 2
+
+[node name="HitboxComponent" parent="Component" parent_id_path=PackedInt32Array(1726308284) index="2" unique_id=1558695521]
+collision_mask = 0
 
 [node name="Sprite2D" parent="." index="7" unique_id=1362725045]
 visible = false
 texture = ExtResource("3_2tpqi")
 
 [node name="ColorRect" type="ColorRect" parent="." index="8" unique_id=390180322]
-visible = false
 offset_left = -11.0
 offset_top = -11.0
 offset_right = 12.0
