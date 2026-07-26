@@ -11,6 +11,7 @@
 height = 32.0
 
 [node name="Goblin" unique_id=769011907 instance=ExtResource("1_88bws")]
+collision_mask = 4
 script = ExtResource("2_2tpqi")
 damage_data = ExtResource("3_l2k61")
 damage_area = ExtResource("4_y014r")
@@ -22,6 +23,13 @@ debug_color = Color(0.9046533, 0.00013957918, 0.7508642, 0.41960785)
 
 [node name="Timer" type="Timer" parent="." index="1" unique_id=154699743]
 one_shot = true
+
+[node name="VisionArea" parent="." index="2" unique_id=852957953]
+collision_layer = 0
+collision_mask = 2
+
+[node name="HitboxComponent" parent="Component" parent_id_path=PackedInt32Array(1726308284) index="2" unique_id=1558695521]
+collision_mask = 0
 
 [node name="Sprite2D" parent="." index="7" unique_id=1362725045]
 visible = false
