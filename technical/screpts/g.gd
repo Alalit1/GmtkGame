@@ -4,6 +4,7 @@ signal enemys_end
 signal enemy_dead
 signal start_spawn
 signal boss_cast
+signal boss_start
 
 var free_cells = []
 var time = 600.0
