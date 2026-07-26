@@ -1,4 +1,4 @@
-extends TextureProgressBar
+extends ProgressBar
 
 @export var max_hp := 100
 var hp := 100

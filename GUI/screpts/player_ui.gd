@@ -10,7 +10,8 @@ var last_stamina := -1
 func _ready():
 	player.hp_changed.connect(_on_hp_changed)
 	player.stamina_changed.connect(_on_stamina_changed)
-
+	player.daed.connect(_on_daed_changed)
+	
 func _process(_delta):
 	if stamina == null:
 		return
@@ -19,7 +20,10 @@ func _process(_delta):
 		last_stamina = stamina
 		$MarginContainer/VBoxContainer/StamionaBar.set_stamina(stamina)
 	
-
+func _on_daed_changed():
+	$MarginContainer.visible = false
+	$Daed_menu.visible = true
+	
 func _on_hp_changed(new_hp):
 	$MarginContainer/VBoxContainer/HealthBar.set_hp(new_hp)
 

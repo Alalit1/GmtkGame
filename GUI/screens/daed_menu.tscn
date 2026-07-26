@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://b87g8bwopf7to"]
+
+[ext_resource type="Script" uid="uid://ckvseofl6sw5h" path="res://GUI/screpts/daed_menu.gd" id="1_whqgb"]
+
+[node name="Daed_menu" type="Control" unique_id=1726314215]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_whqgb")
+
+[node name="Label" type="Label" parent="." unique_id=1227655770]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -11.5
+offset_right = 37.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Daed"
+
+[node name="Panel" type="Panel" parent="." unique_id=1223197885]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -115.0
+offset_right = 78.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1437637812]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer" unique_id=264646525]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back to menu"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]

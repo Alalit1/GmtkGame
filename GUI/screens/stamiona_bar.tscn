@@ -2,9 +2,33 @@
 
 [ext_resource type="Script" uid="uid://d0jme2vuca434" path="res://GUI/screpts/stamiona_bar.gd" id="1_4wx8u"]
 
-[node name="StamionaBar" type="TextureProgressBar" unique_id=1704712253]
-offset_right = 40.0
-offset_bottom = 40.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6px4"]
+bg_color = Color(0.31764707, 0.21568628, 0.56078434, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.50980395, 0.21960784, 0.6509804, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wx8u"]
+bg_color = Color(0.20784314, 0.43137255, 0.21176471, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[node name="StamionaBar" type="ProgressBar" unique_id=1949501456]
+custom_minimum_size = Vector2(64, 16)
+offset_right = 64.0
+offset_bottom = 32.0
+theme_override_styles/background = SubResource("StyleBoxFlat_d6px4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4wx8u")
+step = 1.0
+show_percentage = false
 script = ExtResource("1_4wx8u")
 
 [node name="Label" type="Label" parent="." unique_id=1709848664]

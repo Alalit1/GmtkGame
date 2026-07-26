@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c4qpcjt2qsg6a" path="res://GUI/screens/timer.tscn" id="2_sgc4a"]
 [ext_resource type="PackedScene" uid="uid://b1jvof71dcft3" path="res://GUI/screens/hot_bar.tscn" id="3_h2rll"]
 [ext_resource type="PackedScene" uid="uid://5d1bffsremqn" path="res://GUI/screens/stamiona_bar.tscn" id="4_emgdi"]
+[ext_resource type="PackedScene" uid="uid://b87g8bwopf7to" path="res://GUI/screens/daed_menu.tscn" id="6_j8pab"]
+[ext_resource type="PackedScene" uid="uid://c38vhawd5yt72" path="res://GUI/screens/menu_in_game.tscn" id="7_n5t34"]
 
 [node name="PlayerUI" type="Control" unique_id=865031701]
 layout_mode = 3
@@ -42,9 +44,18 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="HealthBar" parent="MarginContainer/VBoxContainer" unique_id=1865220646 instance=ExtResource("1_df437")]
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="StamionaBar" parent="MarginContainer/VBoxContainer" unique_id=1704712253 instance=ExtResource("4_emgdi")]
 layout_mode = 2
+
+[node name="Daed_menu" parent="." unique_id=1726314215 instance=ExtResource("6_j8pab")]
+visible = false
+layout_mode = 1
+
+[node name="MenuInGame" parent="." unique_id=1616933284 instance=ExtResource("7_n5t34")]
+visible = false
+layout_mode = 1

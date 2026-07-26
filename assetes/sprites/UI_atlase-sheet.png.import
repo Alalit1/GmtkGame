@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8qde58hd0urm"
-path="res://.godot/imported/UI_atlase.png-fc9b23be03a2fb97d5c571e1bf69b47f.ctex"
+uid="uid://bjn2lptb66u67"
+path="res://.godot/imported/UI_atlase-sheet.png-d5713231ba122a444f7dc0fd02a3df68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assetes/sprites/UI_atlase.png"
-dest_files=["res://.godot/imported/UI_atlase.png-fc9b23be03a2fb97d5c571e1bf69b47f.ctex"]
+source_file="res://assetes/sprites/UI_atlase-sheet.png"
+dest_files=["res://.godot/imported/UI_atlase-sheet.png-d5713231ba122a444f7dc0fd02a3df68.ctex"]
 
 [params]
 

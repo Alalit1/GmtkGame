@@ -25,7 +25,7 @@ func use(player) -> void:
 	if uses <= 0:
 		return
 		
-	player.staminas(stamina_amout)
+	player.infinity_stamina(stamina_amout)
 	uses -= 1
 
 	if uses <= 0:

@@ -1,4 +1,4 @@
-extends TextureProgressBar
+extends ProgressBar
 
 @export var max_stamina := 100.0
 var stamina := 100.0

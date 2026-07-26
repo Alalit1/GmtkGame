@@ -27,7 +27,7 @@ func initialize(data: DamageData):
 func _on_body_entered(body: CharacterBody2D) -> void:
 	print("test",body)
 	if body.has_method("take_damage"):
-		print("test",body)
+		print("test","______",body.is_in_group("player"))
 		targets.append(body)
 		apply_damage()
 		
@@ -39,8 +39,9 @@ func _on_body_exited(body: Node) -> void:
 
 
 func apply_damage() -> void:
-	print("test")
+	print("test","__ataa_")
 	var damage := Damage.new()
 
 	for target in targets:
+		print("se")
 		damage.apply_damage(damage_data, target)

@@ -4,6 +4,8 @@ class_name Player
 
 signal hp_changed(new_hp)
 signal stamina_changed(new_stamina)
+signal daed()
+signal esc()
 var inventore = []
 
 @export var speed := 100.0
@@ -67,7 +69,8 @@ func use_item(index: int):
 func _input(event):
 	if event.is_action_pressed("slot_1"):
 		use_item(0)
-
+	#if event.is_action_pressed("Esc"):
+		#esc.emit()
 	if event.is_action_pressed("slot_2"):
 		use_item(1)
 
@@ -146,8 +149,9 @@ func attack(direction):
 	if enemys.size() > 0:
 		combo += 1
 	for enemy in enemys:
-		var final_damage = damage * charge * (combo / 10)
-		enemy.take_damage(final_damage)
+		if enemy.has_method("take_damage"):
+			var final_damage = damage * charge * (combo / 10)
+			enemy.take_damage(final_damage)
 	stamina -= 5
 	charge = 1
 	stamina_changed.emit(stamina)
@@ -188,9 +192,6 @@ func _on_remainder_timer_timeout() -> void:
 		hp = hp * 80 / 100
 		max_stamina = 90
 		stamina = stamina * 90 / 100
-
-	
-	elif G.time == 600:
 
 	elif G.time == 300:
 
@@ -243,8 +244,6 @@ func exit():
 		velocity *= 0
 		position = Vector2(320000,340000)
 
-func healing(heal):
-	hp += heal
 
 func infinity_stamina(count_down):
 	inf_stamina_timer.start(count_down)
@@ -252,19 +251,12 @@ func infinity_stamina(count_down):
 
 func _on_inf_stamina_timer_timeout() -> void:
 	inf_stamina = false
-
-func take_damage(amout):
-	hp -=amout
-	hp_changed.emit(hp)
-	if hp <= 0:
-		queue_free()
 		
 func heal(amout):
 	hp +=amout
 	hp_changed.emit(hp)
 	
-func staminas(amout):
-	print(amout)
+
 	
 func fireball_cast(damage_data):
 	print("fire")
@@ -328,6 +320,8 @@ func _animation_update(direction):
 
 func take_damage(dmg):
 	hp -= dmg
+	hp_changed.emit(hp)
 	if hp <= 0:
-		G.time = 600
-		G.room_finish = 1
+		daed.emit()
+		#G.time = 600
+		#G.room_finish = 1

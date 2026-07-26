@@ -336,28 +336,32 @@ animations = [{
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_pmutf"]
 
 [node name="player" type="CharacterBody2D" unique_id=1310728911 groups=["player"]]
+visibility_layer = 13
 z_index = 1
 position = Vector2(17, 19)
 collision_layer = 2
-
-collision_mask = 4
-
+collision_mask = 12
 script = ExtResource("1_3df6a")
 projectile_attack = ExtResource("2_hn222")
 damage_data = ExtResource("3_4bqik")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2100578888]
+light_mask = 2
+visibility_layer = 12
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_bhunq")
 
 [node name="attack_area" type="Area2D" parent="." unique_id=1127192584]
-visible = false
+light_mask = 10
+visibility_layer = 12
 position = Vector2(0, -9)
 rotation = 1.5707964
-collision_layer = 8
+collision_layer = 10
 collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area" unique_id=2069580161]
+light_mask = 10
+visibility_layer = 12
 position = Vector2(12.5, 2.9812213e-08)
 shape = SubResource("RectangleShape2D_riqys")
 

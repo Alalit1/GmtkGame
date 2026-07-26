@@ -7,3 +7,73 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1596887880]
+layout_mode = 1
+offset_left = 156.0
+offset_top = 83.0
+offset_right = 400.0
+offset_bottom = 285.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=63654370]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label9" type="Label" parent="Panel/VBoxContainer" unique_id=60606513]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 13
+text = "Tutorial"
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=701598397]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 13
+text = "\"LKM\" - attack and buy item"
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer" unique_id=1752027381]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 13
+text = "\"space and shift\" - dash"
+
+[node name="Label4" type="Label" parent="Panel/VBoxContainer" unique_id=1895073923]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 13
+text = "\"1\" - use items on the first slot"
+
+[node name="Label5" type="Label" parent="Panel/VBoxContainer" unique_id=422501975]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 13
+text = "\"2\" - use items on the second  slot"
+
+[node name="Label6" type="Label" parent="Panel/VBoxContainer" unique_id=1932752431]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 13
+text = "\"3\" - use items on the third slot"
+
+[node name="Label7" type="Label" parent="Panel/VBoxContainer" unique_id=1514764947]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 13
+text = "\"4\" - use items on thefourth slot"
+
+[node name="Label8" type="Label" parent="Panel/VBoxContainer" unique_id=2046056078]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 13
+text = "slots are arranged from left to right"
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer" unique_id=2128152879]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 13
+text = "\"Esc\" -menu"
