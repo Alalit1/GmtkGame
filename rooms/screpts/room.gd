@@ -44,10 +44,15 @@ func _ready():
 		for x in range(WIDTH):
 			var atlas_coord = tile_coords[grid[y][x]]
 			tilemap.set_cell(0, Vector2i(x, y), SOURCE_ID, atlas_coord)
+	G.free_cells.clear()
 	for y in range(1, HEIGHT-1):
 		for x in range(1,WIDTH-1):
 			if grid[y][x] == FLOOR:
 				G.free_cells.append(Vector2(x, y) * 20 + Vector2(10, 10))
+	if G.boss:
+		var boss = preload("res://entities/enemy/screns/wizard.tscn").instantiate()
+		add_child(boss)
+		boss.position = Vector2(320,30)
 
 func enemys_end():
 	grid[0][15] = PASSAGE
