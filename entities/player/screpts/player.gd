@@ -2,15 +2,25 @@ extends CharacterBody2D
 
 class_name Player
 
-
+signal hp_changed(new_hp)
+signal stamina_changed(new_stamina)
 var inventore = []
 
 @export var speed := 100.0
 @export var max_hp := 100.0
 @export var hp := 100.0
 @export var damage := 20.0
-@export var stamina := 100.0
+var _stamina := 100.0
+@export var projectile_attack: PackedScene
+@export var damage_data: DamageData
+@export var stamina: float:
+	get:
+		return _stamina
+	set(value):
+		_stamina = clamp(value, 0.0, max_stamina)
+		stamina_changed.emit(_stamina)
 @export var max_stamina := 100.0
+
 
 var dash_cooldown := false
 var dashing := false
@@ -29,6 +39,43 @@ var inf_stamina = false
 @onready var player_animator = $AnimationPlayer
 @onready var player_sprite = $AnimatedSprite2D
 @onready var player_sounds = $AudioStreamPlayer2D
+@onready var ui = $CanvasLayer/PlayerUI
+
+
+
+func _ready() -> void:
+	ui.inventore = inventore
+	ui.player = self
+	
+func use_item(index: int):
+	if index >= PlayerInventore.inventore.size():
+		return
+
+	var item: BaseItem = PlayerInventore.inventore[index]
+
+	if !is_instance_valid(item):
+		PlayerInventore.inventore.remove_at(index)
+		PlayerInventore.inventory_changed.emit()
+		return
+
+	item.use(self)
+
+	PlayerInventore.inventore.remove_at(index)
+	PlayerInventore.inventory_changed.emit()
+	item.free()
+
+func _input(event):
+	if event.is_action_pressed("slot_1"):
+		use_item(0)
+
+	if event.is_action_pressed("slot_2"):
+		use_item(1)
+
+	if event.is_action_pressed("slot_3"):
+		use_item(2)
+
+	if event.is_action_pressed("slot_4"):
+		use_item(3)
 
 func _physics_process(delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
@@ -41,10 +88,12 @@ func _physics_process(delta: float) -> void:
 				if inf_stamina:
 					charge += 0.0167
 					stamina -= 0.0167
+					
 					_animation_update(direction)
 				elif stamina >= 5:
 					charge += 0.0167
 					stamina -= 0.0167
+					
 					_animation_update(direction)
 		elif Input.is_action_just_pressed("LKM"):
 			attack_charging = true
@@ -60,9 +109,11 @@ func _physics_process(delta: float) -> void:
 			if dash_cooldown == false:
 				if inf_stamina:
 					stamina -= 5
+					stamina_changed.emit(stamina)
 					dash()
 				elif stamina >= 5:
 					stamina -= 5
+					stamina_changed.emit(stamina)
 					dash()
 	move_and_slide()
 
@@ -98,6 +149,7 @@ func attack(direction):
 		enemy.take_damage(final_damage)
 	stamina -= 5
 	charge = 1
+	stamina_changed.emit(stamina)
 	if direction >= -PI/4 and direction < PI / 4:
 		player_sprite.play("attack_left")
 		player_sprite.flip_h = true
@@ -118,36 +170,42 @@ func _on_remainder_timer_timeout() -> void:
 	G.time -= 0.05
 	if stamina < max_stamina:
 		stamina += 0.25
+		
 	if G.time == 1000:
 		can_dash = false
 		max_hp = 90
 		hp = hp * 90 / 100
 		max_stamina = 95
 		stamina = stamina * 95 / 100
+	
 	elif G.time == 800:
 		can_combo = false
 		max_hp = 80
 		hp = hp * 80 / 100
 		max_stamina = 90
 		stamina = stamina * 90 / 100
+	
 	elif G.time == 600:
 		can_charge = false
 		max_hp = 70
 		hp = hp * 70 / 100
 		max_stamina = 85
 		stamina = stamina * 85 / 100
+		
 	elif G.time == 400:
 		max_hp = 60
 		hp = hp * 60 / 100
 		max_stamina = 80
 		stamina = stamina * 80 / 100
 		speed = 90
+		
 	elif G.time == 200:
 		max_hp = 50
 		hp = hp * 50 / 100
 		max_stamina = 75
 		stamina = stamina * 75 / 100
 		speed = 80
+	
 
 func _on_dash_cooldown_timeout() -> void:
 	dash_cooldown = false
@@ -178,8 +236,28 @@ func infinity_stamina(count_down):
 func _on_inf_stamina_timer_timeout() -> void:
 	inf_stamina = false
 
-func fireball_cast():
-	pass
+func take_damage(amout):
+	hp -=amout
+	hp_changed.emit(hp)
+	if hp <= 0:
+		queue_free()
+		
+func heal(amout):
+	hp +=amout
+	hp_changed.emit(hp)
+	
+func staminas(amout):
+	print(amout)
+	
+func fireball_cast(damage_data):
+	print("fire")
+	var direction = (get_global_mouse_position() - global_position).normalized()
+
+	var projectile: ProjectileAttack = projectile_attack.instantiate()
+	projectile.global_position = global_position + direction * 60
+
+	get_tree().current_scene.add_child(projectile)
+	projectile.setup(damage_data, direction)
 
 func alohomora_cast():
 	G.emit_signal("enemys_end")

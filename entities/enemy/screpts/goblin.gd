@@ -5,6 +5,9 @@ extends BaseEnemy
 @onready var timer: Timer = $Timer
 var amount_attack = 0
 var bullet: Node
+var health 
+func _ready() -> void:
+	health = enemy_data.health
 
 func _physics_process(_delta):
 	if vision.target == null:
@@ -27,6 +30,11 @@ func _physics_process(_delta):
 	
 	move_and_slide()
 
+func take_damage(amout):
+	health = -amout
+	if health <= 0 :
+		self.queue_free()
+
 func attack(damage_data:DamageData, direction, pos: Vector2):
 	if is_instance_valid(bullet):
 		return
@@ -37,13 +45,16 @@ func attack(damage_data:DamageData, direction, pos: Vector2):
 	bullet.global_position = pos
 	bullet.damage_data = damage_data
 
-	get_tree().current_scene.add_child(bullet)
-	#amount_attack += 1
-	
+	bullet.tree_exited.connect(_on_bullet_removed)
 
+	get_tree().current_scene.add_child(bullet)
+	
+func _on_bullet_removed():
+	bullet = null
 
 func _on_timer_timeout() -> void:
+	print("Timer timeout")
+
 	if is_instance_valid(bullet):
 		bullet.queue_free()
-		bullet = null
 	#amount_attack -= 1

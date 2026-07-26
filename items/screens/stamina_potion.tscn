@@ -2,6 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://b6c47clc4mntd" path="res://items/screens/base_item.tscn" id="1_073wd"]
 [ext_resource type="Script" uid="uid://bbntsstqx26wu" path="res://items/screpts/stamina_potion.gd" id="2_gpbrx"]
+[ext_resource type="Resource" uid="uid://c5pax134030ic" path="res://items/resurse/stamina_potion.tres" id="3_xy21f"]
 
 [node name="StaminaPotion" unique_id=803474339 instance=ExtResource("1_073wd")]
 script = ExtResource("2_gpbrx")
+item_data = ExtResource("3_xy21f")
+
+[node name="Label" parent="CanvasLayer" parent_id_path=PackedInt32Array(2022585543) index="0" unique_id=1402343946]
+theme_override_font_sizes/font_size = 6

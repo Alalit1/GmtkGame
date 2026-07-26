@@ -6,11 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s1fef"]
-radius = 55.443665
+radius = 158.00316
 
 [node name="BaseItem" type="Area2D" unique_id=803474339]
-collision_layer = 16
-collision_mask = 18
 script = ExtResource("1_ayug1")
 item_data = ExtResource("2_ii56r")
 metadata/_custom_type_script = "uid://smwlxyqiy6ok"
@@ -21,20 +19,15 @@ debug_color = Color(0.6760888, 0.49539852, 1.92523e-07, 0.41960785)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1076355886]
 
+[node name="Label" type="Label" parent="." unique_id=1402343946]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="Area2D" type="Area2D" parent="." unique_id=363496927]
-collision_layer = 16
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1555842531]
 shape = SubResource("CircleShape2D_s1fef")
 debug_color = Color(0, 0.62271327, 0.54649323, 0.41960785)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2022585543]
-
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1402343946]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

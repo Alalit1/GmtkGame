@@ -1,7 +1,17 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c5pax134030ic"]
 
 [ext_resource type="Script" uid="uid://cgwq8btxfgioo" path="res://items/screpts/item_data.gd" id="1_xafvh"]
+[ext_resource type="Texture2D" uid="uid://dae50a0uw2wlb" path="res://assetes/sprites/object_atlas.png" id="2_5ffph"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ddth"]
+atlas = ExtResource("2_5ffph")
+region = Rect2(515, 55, 32, 32)
 
 [resource]
 script = ExtResource("1_xafvh")
+item_id = "stamina_potion"
+texture = SubResource("AtlasTexture_6ddth")
+cost = 40
+name = "Stamina potion"
+description = "Stamina does not decrease for 10 seconds."
 metadata/_custom_type_script = "uid://cgwq8btxfgioo"

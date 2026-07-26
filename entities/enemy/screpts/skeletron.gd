@@ -27,7 +27,7 @@ func _physics_process(_delta):
 
 	var directione = global_position.direction_to(vision.target.global_position)
 	#var target_point : Vector2= vision.target.global_position + vision.target.global_position.direction_to(global_position) * 15
-	var attack_position = global_position + directione * 10
+	var attack_position = global_position + directione * 25
 	#print(target_point,vision.target.global_position.direction_to(global_position) * 40)
 	if !is_instance_valid(bullet):
 			attack(damage_data, directione,attack_position)
@@ -46,9 +46,9 @@ func attack(damage_data:DamageData, direction, pos: Vector2):
 
 	bullet = damage_area.instantiate()
 	#bullet.global_position = global_position + directione * 10
-	bullet.damage_data = damage_data
+	#bullet.damage_data = damage_data
 	bullet.setup(damage_data, directione)
-	bullet.global_position = global_position
+	bullet.global_position = pos
 	bullet.damage_data = damage_data
 	#add_child(bullet)
 	get_tree().current_scene.add_child(bullet)
@@ -65,4 +65,7 @@ func take_damage(amout):
 		self.queue_free()
 
 func _on_timer_timeout() -> void:
-	damage_area.queue_free()
+	if is_instance_valid(bullet):
+		bullet.queue_free()
+		bullet = null
+	#damage_area.queue_free()

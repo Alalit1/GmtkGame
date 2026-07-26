@@ -9,9 +9,9 @@ func _on_continue_pressed() -> void:
 	self.visible = false
 
 
-func _on_settings_pressed() -> void:
+"""func _on_settings_pressed() -> void:
 	ScreenManager.change(ScreenManager.Screen.SETTINGS)
-
+"""
 
 func _on_exit_pressed() -> void:
 	ScreenManager.change(ScreenManager.Screen.MAIN_MENU)

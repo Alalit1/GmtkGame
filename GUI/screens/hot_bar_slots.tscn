@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://dgncnshsbx0ww"]
 
+[ext_resource type="Script" uid="uid://cvd7n7mr4jv5o" path="res://GUI/screpts/hot_bar_slots.gd" id="1_gkkva"]
+
 [node name="HotBarSlots" type="Panel" unique_id=846250135]
 custom_minimum_size = Vector2(64, 64)
+script = ExtResource("1_gkkva")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1839671487]
 layout_mode = 1

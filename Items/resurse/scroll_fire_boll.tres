@@ -1,7 +1,16 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bqlyp1dus5hc2"]
 
 [ext_resource type="Script" uid="uid://cgwq8btxfgioo" path="res://items/screpts/item_data.gd" id="1_diog4"]
+[ext_resource type="Texture2D" uid="uid://dae50a0uw2wlb" path="res://assetes/sprites/object_atlas.png" id="2_igp5t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfsei"]
+atlas = ExtResource("2_igp5t")
+region = Rect2(509.5, 0.5, 45, 45)
 
 [resource]
 script = ExtResource("1_diog4")
+texture = SubResource("AtlasTexture_cfsei")
+cost = 100
+name = "Fireball Scroll"
+description = "Creates a fireball in front of you."
 metadata/_custom_type_script = "uid://cgwq8btxfgioo"

@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://2ykal2ib6dd1"]
 
 [ext_resource type="Script" uid="uid://dx5cvfn04nc7u" path="res://entities/player/screpts/player.gd" id="1_3df6a"]
+[ext_resource type="PackedScene" uid="uid://bnywruonepxr6" path="res://combat/screens/projectile_attack.tscn" id="2_hn222"]
 [ext_resource type="Texture2D" uid="uid://dae50a0uw2wlb" path="res://assetes/sprites/object_atlas.png" id="2_lc0sx"]
+[ext_resource type="Resource" uid="uid://0d7ft2ebld5r" path="res://combat/resurse/fire_ball.tres" id="3_4bqik"]
+[ext_resource type="PackedScene" uid="uid://c3ilemfb72wkc" path="res://GUI/screens/player_ui.tscn" id="3_6ddth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(13, 7)
@@ -337,16 +340,21 @@ z_index = 1
 position = Vector2(17, 19)
 scale = Vector2(2, 2)
 collision_layer = 2
+collision_mask = 13
 script = ExtResource("1_3df6a")
+projectile_attack = ExtResource("2_hn222")
+damage_data = ExtResource("3_4bqik")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2100578888]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_bhunq")
 
 [node name="attack_area" type="Area2D" parent="." unique_id=1127192584]
+visible = false
 position = Vector2(0, -9)
 rotation = 1.5707964
-collision_layer = 0
+collision_layer = 8
+collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area" unique_id=2069580161]
 position = Vector2(12.5, 2.9812213e-08)
@@ -391,6 +399,10 @@ autoplay = "idle_down"
 stream = SubResource("AudioStreamPlaylist_pmutf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1439537868]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1066486288]
+
+[node name="PlayerUI" parent="CanvasLayer" unique_id=865031701 instance=ExtResource("3_6ddth")]
 
 [connection signal="timeout" from="combo" to="." method="_on_combo_timeout"]
 [connection signal="timeout" from="remainder_timer" to="." method="_on_remainder_timer_timeout"]
