@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bwey5eni26ss8"]
+
+[ext_resource type="Script" uid="uid://dbnpnctwe8uh7" path="res://combat/screpts/shadow_pike.gd" id="1_eyojo"]
+[ext_resource type="Texture2D" uid="uid://dae50a0uw2wlb" path="res://assetes/sprites/object_atlas.png" id="2_m3s7u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_riqys"]
+size = Vector2(11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riqys"]
+atlas = ExtResource("2_m3s7u")
+region = Rect2(598, 414, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an82l"]
+atlas = ExtResource("2_m3s7u")
+region = Rect2(414, 460, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dokqr"]
+atlas = ExtResource("2_m3s7u")
+region = Rect2(460, 460, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agocr"]
+atlas = ExtResource("2_m3s7u")
+region = Rect2(506, 460, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kny8"]
+atlas = ExtResource("2_m3s7u")
+region = Rect2(552, 460, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c162y"]
+atlas = ExtResource("2_m3s7u")
+region = Rect2(598, 460, 45, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bhunq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an82l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dokqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agocr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kny8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c162y")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="ShadowPike" type="Area2D" unique_id=1075299243]
+position = Vector2(95, 61)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_eyojo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1976961579]
+shape = SubResource("RectangleShape2D_riqys")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2020555283]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0.5, -16.5)
+texture = SubResource("AtlasTexture_riqys")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1997704196]
+visible = false
+position = Vector2(0, -17)
+sprite_frames = SubResource("SpriteFrames_bhunq")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
