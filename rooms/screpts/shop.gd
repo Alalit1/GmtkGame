@@ -1,6 +1,6 @@
 extends Node2D
 
-var loot = [preload("res://Items/screens/health_potion.tscn"), preload("res://Items/screens/scroll_fire_boll.tscn")]
+var loot = [preload("res://Items/screens/health_potion.tscn"), preload("res://Items/screens/scroll_fire_ball.tscn")]
 var rng := RandomNumberGenerator.new()
 
 func _ready() -> void:
