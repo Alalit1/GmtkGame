@@ -156,7 +156,7 @@ func _on_dash_cooldown_timeout() -> void:
 func exit():
 	if transition:
 		call_deferred("set_collision_mask_value", 1, true)
-		position = Vector2(320,340)
+		position = Vector2(320,332.0)
 		await get_tree().physics_frame
 		dashing = false
 		can_dash = true
@@ -169,7 +169,7 @@ func exit():
 		transition = true
 		visible = false
 		velocity *= 0
-		position = Vector2(320000,340000)
+		position = Vector2(320000,332000)
 
 func healing(heal):
 	hp += heal
