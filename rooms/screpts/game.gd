@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _on_exit_body_entered(body: Node2D) -> void:
 	G.room_finish += 1
-	if G.room_finish % 21 == 0:
+	if G.room_finish % 20 == 0:
 		G.boss = true
 		new_room = preload("res://rooms/screns/battle_room.tscn")
 	elif G.room_finish % 2 == 1:
