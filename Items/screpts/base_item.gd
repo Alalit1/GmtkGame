@@ -24,7 +24,7 @@ func use(player) -> void:
 
 func _process(delta):
 	if Input.is_action_just_released("LKM") and item_use:
-		pick_up()
+		pick_up(player)
 
 func pick_up(player) -> void:
 	player.buy(cost)
