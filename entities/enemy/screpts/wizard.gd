@@ -12,6 +12,12 @@ var pike_scene = preload("res://combat/screens/shadow_pike.tscn")
 @onready var sprite = $AnimatedSprite2D
 var direction = 0
 
+func _ready() -> void:
+	G.connect("boss_start", Callable(self, "timer_start"))
+
+func timer_sart():
+	$recharge.start(5)
+
 func take_damage(dmg):
 	hp -= dmg
 
@@ -19,19 +25,6 @@ func _physics_process(delta: float) -> void:
 	direction = global_position.angle_to_point(G.player_position)
 	if mana < 100:
 		mana += 0.1
-	if not casting:
-		if direction >= -PI/4 and direction < PI / 4:
-			sprite.play("idle_right")
-			sprite.flip_h = false
-		elif direction >= 3 * PI/4 or direction <= -3 * PI / 4:
-			sprite.play("idle_right")
-			sprite.flip_h = true
-		elif direction >= -3 * PI/4 and direction < -PI / 4:
-			sprite.play("idle_up")
-			sprite.flip_h = false
-		elif direction >= PI/4 and direction < 3 * PI / 4:
-			sprite.play("idle_down")
-			sprite.flip_h = false
 
 func _on_recharge_timeout() -> void:
 	if mana >= 10:
