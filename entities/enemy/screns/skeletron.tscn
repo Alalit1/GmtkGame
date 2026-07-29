@@ -494,5 +494,8 @@ visible = false
 
 [node name="AnimatedSprite2D" parent="." index="5" unique_id=1861014263]
 sprite_frames = SubResource("SpriteFrames_veyp2")
-animation = &"idle_up"
+
+
+animation = &"attack_down"
+
 autoplay = "idle_down"

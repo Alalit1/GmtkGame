@@ -41,4 +41,5 @@ func first_spawn():
 		var enemy = enemy_load.instantiate()
 		get_parent().add_child(enemy)
 		enemy.position = i
+		enemy.spawn_position = i
 		spawn_data[i] -= 1

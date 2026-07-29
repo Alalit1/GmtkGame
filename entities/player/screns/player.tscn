@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dx5cvfn04nc7u" path="res://entities/player/screpts/player.gd" id="1_3df6a"]
 [ext_resource type="PackedScene" uid="uid://bnywruonepxr6" path="res://combat/screens/projectile_attack.tscn" id="2_hn222"]
 [ext_resource type="Texture2D" uid="uid://dae50a0uw2wlb" path="res://assetes/sprites/object_atlas.png" id="2_lc0sx"]
-[ext_resource type="Resource" uid="uid://0d7ft2ebld5r" path="res://combat/resurse/fire_ball.tres" id="3_4bqik"]
+
 [ext_resource type="PackedScene" uid="uid://c3ilemfb72wkc" path="res://GUI/screens/player_ui.tscn" id="3_6ddth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
@@ -399,9 +399,15 @@ stream = SubResource("AudioStreamPlaylist_pmutf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1439537868]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1066486288]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1464081475]
 
 [node name="PlayerUI" parent="CanvasLayer" unique_id=865031701 instance=ExtResource("3_6ddth")]
+offset_left = 17.0
+offset_top = 19.0
+offset_right = 17.0
+offset_bottom = 19.0
+
 
 [connection signal="timeout" from="combo" to="." method="_on_combo_timeout"]
 [connection signal="timeout" from="remainder_timer" to="." method="_on_remainder_timer_timeout"]

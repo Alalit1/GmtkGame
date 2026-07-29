@@ -23,7 +23,6 @@ var _stamina := 100.0
 		stamina_changed.emit(_stamina)
 @export var max_stamina := 100.0
 
-
 var dash_cooldown := false
 var dashing := false
 var last_direction := Vector2(0,1)
@@ -91,12 +90,10 @@ func _physics_process(delta: float) -> void:
 			if can_charge:
 				if inf_stamina:
 					charge += 0.0167
-					stamina -= 0.0167
-					
 					_animation_update(direction)
 				elif stamina >= 5:
 					charge += 0.0167
-					stamina -= 0.0167
+					stamina -= 0.167
 					
 					_animation_update(direction)
 		elif Input.is_action_just_pressed("LKM"):
@@ -106,6 +103,7 @@ func _physics_process(delta: float) -> void:
 				attack(direction)
 			elif stamina >= 5:
 				attack(direction)
+				stamina -= 5
 		else:
 			move()
 	if Input.is_action_just_pressed("space"):
@@ -149,10 +147,10 @@ func attack(direction):
 	if enemys.size() > 0:
 		combo += 1
 	for enemy in enemys:
-		if enemy.has_method("take_damage"):
-			var final_damage = damage * charge * (combo / 10)
-			enemy.take_damage(final_damage)
-	stamina -= 5
+
+		var final_damage = damage * charge * (combo / 10)
+		enemy.take_damage(final_damage)
+
 	charge = 1
 	stamina_changed.emit(stamina)
 	if direction >= -PI/4 and direction < PI / 4:
@@ -201,8 +199,6 @@ func _on_remainder_timer_timeout() -> void:
 		max_stamina = 85
 		stamina = stamina * 85 / 100
 
-		
-
 	elif G.time == 200:
 
 		max_hp = 60
@@ -210,9 +206,6 @@ func _on_remainder_timer_timeout() -> void:
 		max_stamina = 80
 		stamina = stamina * 80 / 100
 		speed = 90
-
-		
-
 
 	elif G.time == 100:
 
@@ -317,11 +310,3 @@ func _animation_update(direction):
 			elif last_direction.y > 0:
 				player_sprite.flip_h = false
 				player_sprite.play("idle_down")
-
-func take_damage(dmg):
-	hp -= dmg
-	hp_changed.emit(hp)
-	if hp <= 0:
-		daed.emit()
-		#G.time = 600
-		#G.room_finish = 1

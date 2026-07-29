@@ -138,7 +138,6 @@ stream = SubResource("AudioStreamPlaylist_j3pel")
 
 [node name="recharge" type="Timer" parent="." unique_id=1065280471]
 wait_time = 5.0
-autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=498870843]
 position = Vector2(2, 0.5)
