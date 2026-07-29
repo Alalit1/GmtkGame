@@ -3,14 +3,14 @@
 [ext_resource type="AudioStream" uid="uid://dxbpncwrni3qd" path="res://assetes/sound/Button.mp3" id="1_6jv2u"]
 [ext_resource type="Script" uid="uid://cmx77c3sc2j3u" path="res://technical/screpts/audio_manager.gd" id="1_mo5ak"]
 [ext_resource type="AudioStream" uid="uid://coi2njatppdlt" path="res://assetes/sound/test_volume.mp3" id="3_vre3n"]
-[ext_resource type="AudioStream" uid="uid://byx7mdufvmo8i" path="res://assetes/sound/MainMenuMusic.wav" id="3_w3lci"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_mo5ak"]
-stream_count = 1
+stream_count = 2
+stream_0 = ExtResource("3_vre3n")
+stream_1 = ExtResource("1_6jv2u")
 
 [node name="AudioManager" type="Node" unique_id=1820686279]
 script = ExtResource("1_mo5ak")
-music_sounds = Array[AudioStream]([ExtResource("3_vre3n"), ExtResource("3_w3lci")])
 ui_sounds = Array[AudioStream]([ExtResource("3_vre3n"), ExtResource("1_6jv2u")])
 sfx_sounds = Array[AudioStream]([ExtResource("3_vre3n")])
 environment_sounds = Array[AudioStream]([ExtResource("3_vre3n")])

@@ -6,8 +6,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_s1fef"]
 
 [node name="ProjectileAttack" type="Node2D" unique_id=615787375]
-light_mask = 4
-visibility_layer = 15
+light_mask = 8
+visibility_layer = 6
 script = ExtResource("1_lvjva")
 
 [node name="DamageZone" parent="." unique_id=1262248345 instance=ExtResource("2_1w366")]
@@ -15,7 +15,8 @@ light_mask = 8
 visibility_layer = 15
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DamageZone" unique_id=479451164]
-visibility_layer = 7
+light_mask = 8
+visibility_layer = 6
 shape = SubResource("CircleShape2D_s1fef")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=330411116]
