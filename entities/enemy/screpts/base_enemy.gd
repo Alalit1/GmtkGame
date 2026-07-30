@@ -1,12 +1,8 @@
 extends CharacterBody2D
 class_name BaseEnemy
 
-#@export var walk_speed := 120.0
-#@export var run_speed := 220.0
-@export var enemy_data : EnemyData
 
-#@onready var brain: Brain = $Brain
-@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@export var enemy_data : EnemyData
 @onready var vision : VisionArea = $VisionArea
 
 var move_direction := Vector2.ZERO
@@ -15,7 +11,8 @@ var current_speed := 0.0
 var spawn_position = Vector2.ZERO
 
 func _ready() -> void:
-	
+	$CollisionShape2D.shape.rdius = enemy_data.radius
+	$CollisionShape2D.shape.height = enemy_data.height
 	$Component/Characteristic.setup(enemy_data)
 	vision.radius = enemy_data.vision_area
 

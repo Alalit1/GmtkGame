@@ -1,20 +1,31 @@
 class_name EnemyData
 extends Resource
 
+
+@export_category("tex")
+@export var id : int
+@export_category("Colision")
+@export_group("Size")
+## высота colision
+@export var height : float
+## шырына colision
+@export var radius : float
+@export_group("mask $ layer")
+@export var mask : Array[int]
+@export var layer : Array[int]
 @export_category("Characteristic")
 ## здорове
 @export var health  : float = 100
 ## скорость
 @export var speed : float = 50
+## урон
 @export var damage: float = 20
+##
 @export var stamina: float = 20
+## радийс зрения
 @export var vision_area : float = 100
-
 ## ускорение
 @export var speed_up : float = 25
-## радийс зрения
-#@export var detection_range : float = 100
-@export var demeanor : String
 ## вожможні механіка
 @export_group("Resistance")
 ##
@@ -29,8 +40,10 @@ extends Resource
 @export var rock : float
 @export_category("Visuals")
 ##
-@export var texture : Texture2D
+@export var texture : SpriteFrames
 
 @export_category("Sounds")
-
+##
+@export var sound_list = AudioStreamPlaylist 
 @export_category("Attack")
+@export_enum("male","range") var type: int

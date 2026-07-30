@@ -7,10 +7,6 @@
 [ext_resource type="Resource" uid="uid://cxnajieb6wfm1" path="res://entities/enemy/resource/skeleton.tres" id="5_omqn3"]
 [ext_resource type="Texture2D" uid="uid://dae50a0uw2wlb" path="res://assetes/sprites/object_atlas.png" id="6_4g6r3"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddcqk"]
-radius = 5.0
-height = 18.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_omqn3"]
 atlas = ExtResource("6_4g6r3")
 region = Rect2(0, 184, 45, 45)
@@ -475,14 +471,7 @@ damage_data = ExtResource("3_ddcqk")
 damage_area = ExtResource("4_ddcqk")
 enemy_data = ExtResource("5_omqn3")
 
-[node name="Timer" type="Timer" parent="." index="0" unique_id=1957476346]
-wait_time = 2.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1" unique_id=1249992577]
-shape = SubResource("CapsuleShape2D_ddcqk")
-debug_color = Color(0.9046533, 0.00013957918, 0.7508642, 0.41960785)
-
-[node name="VisionArea" parent="." index="2" unique_id=852957953]
+[node name="VisionArea" parent="." index="1" unique_id=852957953]
 collision_layer = 0
 collision_mask = 2
 
@@ -492,10 +481,7 @@ collision_mask = 0
 [node name="CollisionShape2D" parent="Component/HitboxComponent" index="0" unique_id=2010279252]
 visible = false
 
-[node name="AnimatedSprite2D" parent="." index="5" unique_id=1861014263]
+[node name="AnimatedSprite2D" parent="." index="4" unique_id=1861014263]
 sprite_frames = SubResource("SpriteFrames_veyp2")
-
-
 animation = &"attack_down"
-
 autoplay = "idle_down"
