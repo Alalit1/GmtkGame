@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://cuecqb705lott" path="res://assetes/sprites/GMTK Game Jam 2026 Full Logo.png" id="1_ppkqy"]
 [ext_resource type="Script" uid="uid://cfxe736unt30c" path="res://GUI/screpts/main_menu.gd" id="1_x6eak"]
-[ext_resource type="Texture2D" uid="uid://b34y6tei35xvi" path="res://assetes/sprites/FFxh9o.png" id="3_mgq2c"]
 
 [node name="MainMenu" type="Control" unique_id=794908610]
 layout_mode = 3
@@ -76,17 +75,6 @@ offset_top = -77.0
 offset_right = 98.0
 grow_vertical = 0
 texture = ExtResource("1_ppkqy")
-expand_mode = 1
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1464782319]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -345.0
-offset_bottom = 73.0
-grow_horizontal = 0
-texture = ExtResource("3_mgq2c")
 expand_mode = 1
 
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]

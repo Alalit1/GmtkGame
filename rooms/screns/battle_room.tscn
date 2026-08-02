@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dc8tjovkv4bso" path="res://rooms/screpts/room.gd" id="1_fiatl"]
 [ext_resource type="Texture2D" uid="uid://qqcf53yopo7x" path="res://assetes/sprites/tiles.png" id="2_4r55o"]
-[ext_resource type="Script" uid="uid://csnpq13mfqtc" path="res://technical/screpts/spawner.gd" id="3_6c40e"]
+[ext_resource type="Script" uid="uid://csnpq13mfqtc" path="res://technical/scripts/spawner.gd" id="3_6c40e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jmtb2"]
 texture = ExtResource("2_4r55o")

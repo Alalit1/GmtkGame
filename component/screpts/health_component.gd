@@ -15,9 +15,9 @@ func _ready():
 	
 	health = MAX_HEALTH
 
+func take_damage(amount: float):
+	print(health,"__",amount)
+	health -= amount
 
-func take_damage(attack):
-	health -= attack.attack_gamage
-	
 	if health <= 0:
 		emit_signal("daed")

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://deltl0o2jyovv"]
+
+[ext_resource type="Resource" uid="uid://fxsqact8yllu" path="res://combat/resurse/goblin.tres" id="1_34wad"]
+[ext_resource type="Script" uid="uid://ctxmdtnnd74g7" path="res://entitys/enemy/screpts/enemy_data.gd" id="1_dlxql"]
+[ext_resource type="SpriteFrames" uid="uid://bxyyqjqliorq5" path="res://assetes/sprites/sprite_frames/goblin.tres" id="2_t8i8a"]
+
+[resource]
+script = ExtResource("1_dlxql")
+id = "goblin"
+height = 10.0
+radius = 10.0
+vision_area = 200.0
+sprite_frames = ExtResource("2_t8i8a")
+damage_data = ExtResource("1_34wad")
+metadata/_custom_type_script = "uid://ctxmdtnnd74g7"

@@ -50,7 +50,7 @@ func _ready():
 			if grid[y][x] == FLOOR:
 				G.free_cells.append(Vector2(x, y) * 20 + Vector2(10, 10))
 	if G.boss:
-		var boss = preload("res://entities/enemy/screns/wizard.tscn").instantiate()
+		var boss = preload("res://entitys/enemy/screns/wizard.tscn").instantiate()
 		add_child(boss)
 		boss.position = Vector2(320,30)
 
