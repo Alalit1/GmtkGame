@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dlb8otni5dldo"]
+
+[ext_resource type="Script" uid="uid://c5nappcvnolww" path="res://component/screpts/attack_component.gd" id="1_74u2v"]
+
+[node name="AttackComponent" type="Node2D" unique_id=1559690437]
+script = ExtResource("1_74u2v")

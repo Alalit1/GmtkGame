@@ -7,11 +7,20 @@ signal hit(body)
 var targets: Array[Node] = []
 
 
-func _ready() -> void:
+var direction: Vector2
 
-	await get_tree().create_timer(0.2).timeout
-	queue_free()
+
+func setup(
+	_damage_data: DamageData,
+	_direction: Vector2
+) -> void:
+	damage_data = _damage_data
+	direction = _direction.normalized()
+
+
+func _ready() -> void:
 	shape.radius = 10
+
 
 func initialize(data: DamageData):
 	damage_data = data
@@ -25,7 +34,7 @@ func initialize(data: DamageData):
 	circle.radius = damage_data.radius
 
 func _on_body_entered(body: CharacterBody2D) -> void:
-	print("test",body)
+	#print("test",body)
 	if body.has_method("take_damage"):
 		print("test","______",body.is_in_group("player"))
 		targets.append(body)

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cppi2xj1jfyws"]
+
+[ext_resource type="Script" uid="uid://dsh3qx3l6c8ag" path="res://technical/scripts/test_map.gd" id="1_1hj31"]
+[ext_resource type="PackedScene" uid="uid://cisgvatntw4c" path="res://entitys/enemy/screns/wizard.tscn" id="3_1hj31"]
+[ext_resource type="PackedScene" uid="uid://2ykal2ib6dd1" path="res://entitys/player/screns/player.tscn" id="4_f5t1s"]
+
+[node name="TestMap" type="Node2D" unique_id=1472668781]
+script = ExtResource("1_1hj31")
+
+[node name="Wizard" parent="." unique_id=455569345 instance=ExtResource("3_1hj31")]
+position = Vector2(410, 130)
+
+[node name="player" parent="." unique_id=1310728911 instance=ExtResource("4_f5t1s")]
+position = Vector2(260, 284)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1194501271]

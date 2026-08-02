@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2us81764x628" path="res://rooms/screpts/game.gd" id="1_veyp2"]
 [ext_resource type="PackedScene" uid="uid://hjclh0rvs3un" path="res://rooms/screns/battle_room.tscn" id="2_g8fwt"]
-[ext_resource type="PackedScene" uid="uid://2ykal2ib6dd1" path="res://entities/player/screns/player.tscn" id="3_dunk3"]
+[ext_resource type="PackedScene" uid="uid://2ykal2ib6dd1" path="res://entitys/player/screns/player.tscn" id="3_dunk3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0skf"]
 size = Vector2(40, 20)
