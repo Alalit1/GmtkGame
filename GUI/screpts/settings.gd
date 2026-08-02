@@ -1,6 +1,28 @@
 extends Control
 
 
+@onready var popup = $MarginContainer/MenuButton.get_popup() as PopupMenu
+
+func _ready():
+	popup.add_item("English", 0)
+	popup.add_item("Русский", 1)
+	popup.add_item("Українська", 2)
+
+	popup.id_pressed.connect(_on_language_selected)
+
+
+func _on_language_selected(id):
+	match id:
+		0:
+			TranslationServer.set_locale("en")
+			Config.language = "en"
+		1:
+			TranslationServer.set_locale("ru")
+			Config.language = "ru"
+		2:
+			TranslationServer.set_locale("uk")
+			Config.language = "uk"
+
 func _on_master_value_changed(value: float) -> void:
 	var bus = AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_volume_db(bus, linear_to_db(value))
