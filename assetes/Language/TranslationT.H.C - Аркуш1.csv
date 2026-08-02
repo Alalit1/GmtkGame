@@ -1,0 +1,30 @@
+ KEY,en,ru,uk
+EXIT,Exit,Выход,Вихід
+SETTINGS,Settings,Настройки,Налаштування
+NEW_GAME,New game,Новая игра,Новая ігра
+MASTER_VOLUME,Master volume,Общая громкость,Загальна гучність
+MUSIC_VOLUME,Music volume,Громкость музыки,Гучність музики
+SFX_VOLUME,SFX volume,Громкость звуковых эффектов,Гучність звукових ефектів
+DEFAULT,Default,По умолчанию,За замовчуванням
+CREATED,Developed by AlaLit & Dimaprogramer,Разработано AlaLit и Dimaprogramer,Розроблено AlaLit та Dimaprogramer
+NAME_GAME,The hero's curse,Проклятие героя,Прокляття героя
+BACK_TO_MENU,Back to menu,Вернуться в меню,Повернутися до меню
+YOU_DAED,You Daed,You Daed,You Daed
+HP_POTION,Health potion,Зелье здоровья,Зілля здоров'я
+HEALTH_HP,When used restores 20 hp,При использовании восстанавливает 20 ОЗ.,При використанні відновлює 20 ОЗ.
+FIRE_SCROLL,Fireball Scroll,Свиток «Огненный шар»,Сувій вогняної кулі
+FIREBALL_LABEL,Creates a fireball in front of you.,Создаёт перед вами огненный шар.,Створює вогняну кулю перед вами.
+OPEN_DOR_LABEL,Opens a door for free.,Открывает дверь бесплатно.,Відчиняє двері безкоштовно.
+LOCKPICKING,Scroll of Door Opening,Свиток открывания дверей,Сувій відмикання дверей
+ST_POTION,Stamina potion,Зелье выносливости,Зілля витривалості
+ST_LABEL,Stamina does not decrease for 10 seconds.,Запас сил не уменьшается в течение 10 секунд.,Витривалість не зменшується протягом 10 секунд.
+TUTORIAL,Tutorial,Обучение,Інструкція
+LKM_LABEL,"""LKM"" - attack and buy item",«ЛКМ» — атака и покупка предмета.,«ЛКМ» — атака та купівля предмета.
+DASH_LABEL,"""space and shift"" - dash",«Пробел» и «Shift» — рывок,«Пробіл» і «Shift» — ривок
+1_SLOT_LABEL,"""1"" - use items on the first slot",«1» — использовать предмет из первого слота ,«1» — використання предмета в першому слоті
+2_SLOT_LABEL,"""2"" - use items on the second  slot",«2» — использовать предмет из второго слота ,«2» — використання предмета в другому слоті
+3_SLOT_LABEL,"""3"" - use items on the third slot",«3» — использовать предмет из третьего слота ,«3» — використання предмета в третьому слоті 
+4_SLOT_LABEL,"""4"" - use items on thefourth slot",«4» — использовать предмет из четвертого слота,«4» — використання предмета в четвертому слоті
+SLOTS_REAING,Slots are arranged from left to right,Слоты расположены слева направо,Слоти розташовані зліва направо
+ESC_LABEL,"""Esc"" - menu",«Esc» — меню,«Esc» — меню
+LANGUAGE,Language,Язык,Мова

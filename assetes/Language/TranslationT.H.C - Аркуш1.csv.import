@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c85r2kvyklske"
+
+[deps]
+
+files=["res://assetes/Language/TranslationT.H.C - Аркуш1.en.translation", "res://assetes/Language/TranslationT.H.C - Аркуш1.ru.translation", "res://assetes/Language/TranslationT.H.C - Аркуш1.uk.translation"]
+
+source_file="res://assetes/Language/TranslationT.H.C - Аркуш1.csv"
+dest_files=["res://assetes/Language/TranslationT.H.C - Аркуш1.en.translation", "res://assetes/Language/TranslationT.H.C - Аркуш1.ru.translation", "res://assetes/Language/TranslationT.H.C - Аркуш1.uk.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

@@ -28,6 +28,7 @@ AudioManager="*uid://gxf0n2btp863"
 TimeGlobal="*uid://di7qht4yqjwn"
 PlayerInventore="*uid://c7iee287dpprf"
 EnemyDatabase="*uid://5kynimmuakdl"
+Config="*uid://c45fl0kkp3qn6"
 
 [display]
 
@@ -112,6 +113,11 @@ LK={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/translation_remaps={}
+locale/translations=PackedStringArray("res://assetes/Language/TranslationT.H.C - Аркуш1.ru.translation", "res://assetes/Language/TranslationT.H.C - Аркуш1.en.translation", "res://assetes/Language/TranslationT.H.C - Аркуш1.uk.translation")
 
 [physics]
 

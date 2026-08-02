@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dg50rlj07cca2"]
 
 [ext_resource type="Script" uid="uid://bfj4ad11jbalb" path="res://GUI/screpts/settings.gd" id="1_n16i8"]
+[ext_resource type="Texture2D" uid="uid://bp0dmknurnos5" path="res://icon.svg" id="2_438b1"]
 
 [node name="Settings" type="Control" unique_id=42141974]
 layout_mode = 3
@@ -23,17 +24,23 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
+[node name="MenuButton" type="MenuButton" parent="MarginContainer" unique_id=869113504]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+icon = ExtResource("2_438b1")
+
 [node name="Back" type="Button" parent="MarginContainer" unique_id=1184225119]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Back"
+text = "BACK_TO_MENU"
 
 [node name="Label" type="Label" parent="MarginContainer" unique_id=305551085]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "Settings"
+text = "SETTINGS"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=733259995]
 layout_mode = 2
@@ -45,7 +52,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Master" unique_id=1149310509]
 layout_mode = 2
-text = "Master volume"
+text = "MASTER_VOLUME"
 
 [node name="Master" type="HSlider" parent="MarginContainer/VBoxContainer/Master" unique_id=1368402257]
 layout_mode = 2
@@ -58,7 +65,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Music" unique_id=485240775]
 layout_mode = 2
-text = "Music volume"
+text = "MUSIC_VOLUME"
 
 [node name="Music" type="HSlider" parent="MarginContainer/VBoxContainer/Music" unique_id=26799361]
 layout_mode = 2
@@ -71,7 +78,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/SFX" unique_id=1821057612]
 layout_mode = 2
-text = "Effects volume"
+text = "SFX_VOLUME"
 
 [node name="SFX" type="HSlider" parent="MarginContainer/VBoxContainer/SFX" unique_id=1370108411]
 layout_mode = 2
@@ -80,6 +87,7 @@ step = 0.1
 value = 1.5
 
 [node name="UI" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=983076879]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/UI" unique_id=1692530640]
@@ -93,6 +101,7 @@ step = 0.1
 value = 1.5
 
 [node name="Enviroment" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=977333602]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Enviroment" unique_id=888780550]
