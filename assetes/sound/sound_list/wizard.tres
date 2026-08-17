@@ -1,0 +1,9 @@
+[gd_resource type="AudioStreamPlaylist" format=3 uid="uid://b32j3ugb1w54t"]
+
+[ext_resource type="AudioStream" uid="uid://bt3xolovun867" path="res://assetes/sound/Wizzard Attack.wav" id="1_p5e32"]
+[ext_resource type="AudioStream" uid="uid://c30v38vf2nd3q" path="res://assetes/sound/Wizzard teleport.wav" id="2_7l02a"]
+
+[resource]
+stream_count = 2
+stream_0 = ExtResource("1_p5e32")
+stream_1 = ExtResource("2_7l02a")

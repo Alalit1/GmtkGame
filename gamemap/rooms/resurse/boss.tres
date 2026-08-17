@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RoomBattleBoss" format=3 uid="uid://cwvqd7c6avka1"]
+
+[ext_resource type="Script" uid="uid://ctxmdtnnd74g7" path="res://entitys/enemy/screpts/enemy_data.gd" id="1_62um1"]
+[ext_resource type="Script" uid="uid://bkq1udsdy3x5d" path="res://gamemap/rooms/screpts/room_battle_boss.gd" id="1_x8nss"]
+[ext_resource type="Resource" uid="uid://d4iik3vvdtq46" path="res://entitys/enemy/resource/wizard.tres" id="2_5k85u"]
+
+[resource]
+script = ExtResource("1_x8nss")
+required_events = Array[int]([1])
+enemy_spawn = true
+enemy = Array[ExtResource("1_62um1")]([ExtResource("2_5k85u")])
+room_type = 2
+metadata/_custom_type_script = "uid://bkq1udsdy3x5d"

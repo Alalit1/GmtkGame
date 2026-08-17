@@ -9,6 +9,7 @@ region = Rect2(560, 10, 32, 32)
 
 [resource]
 script = ExtResource("1_ljaxh")
+item_id = "scroll_open_room"
 texture = SubResource("AtlasTexture_4bqik")
 cost = 120
 name = "LOCKPICKING"

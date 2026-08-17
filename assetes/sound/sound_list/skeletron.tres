@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamPlaylist" format=3 uid="uid://d320khe138yq1"]
+
+[ext_resource type="AudioStream" uid="uid://d4l2gg8lg0fq8" path="res://assetes/sound/Bow Attack.wav" id="1_tluuo"]
+[ext_resource type="AudioStream" uid="uid://cfi27te1an2br" path="res://assetes/sound/Bow Put Away.wav" id="2_tcvci"]
+[ext_resource type="AudioStream" uid="uid://d04qy7i7wwa8g" path="res://assetes/sound/skeleton_damge.mp3" id="3_r32nj"]
+[ext_resource type="AudioStream" uid="uid://cfqww8y5xa4um" path="res://assetes/sound/skeleton_daed.mp3" id="4_a0vbr"]
+
+[resource]
+stream_count = 4
+stream_0 = ExtResource("1_tluuo")
+stream_1 = ExtResource("2_tcvci")
+stream_2 = ExtResource("3_r32nj")
+stream_3 = ExtResource("4_a0vbr")

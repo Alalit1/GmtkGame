@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamPlaylist" format=3 uid="uid://5fnaif2fyll3"]
+
+[ext_resource type="AudioStream" uid="uid://thbvxacjummm" path="res://assetes/sound/SwordAttack.mp3" id="1_17wod"]
+[ext_resource type="AudioStream" uid="uid://bnxmhrfd42mlr" path="res://assetes/sound/hero_damage.mp3" id="2_mp8hv"]
+[ext_resource type="AudioStream" uid="uid://oxmon5kdyw6a" path="res://assetes/sound/hero_move.mp3" id="3_ohcpb"]
+
+[resource]
+stream_count = 3
+stream_0 = ExtResource("1_17wod")
+stream_1 = ExtResource("2_mp8hv")
+stream_2 = ExtResource("3_ohcpb")

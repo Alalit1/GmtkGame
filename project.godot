@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="The hero's curse"
-run/main_scene="uid://ccry7c57bbhdd"
+config/tags=PackedStringArray("2d")
+run/main_scene="uid://m7oj5ww5hp4s"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

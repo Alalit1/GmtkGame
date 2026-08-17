@@ -1,0 +1,31 @@
+[gd_resource type="TileSet" format=3 uid="uid://c0ilrhe7igsl"]
+
+[ext_resource type="Texture2D" uid="uid://qqcf53yopo7x" path="res://assetes/sprites/tiles.png" id="1_e83gh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ronlu"]
+resource_name = "flor"
+texture = ExtResource("1_e83gh")
+texture_region_size = Vector2i(20, 20)
+1:0/0 = 0
+2:0/0 = 0
+5:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e83gh"]
+resource_name = "dor"
+texture = ExtResource("1_e83gh")
+margins = Vector2i(1, 1)
+separation = Vector2i(1, 2)
+texture_region_size = Vector2i(19, 19)
+4:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6bjj"]
+resource_name = "wall"
+texture = ExtResource("1_e83gh")
+texture_region_size = Vector2i(20, 20)
+0:0/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_ronlu")
+sources/2 = SubResource("TileSetAtlasSource_e6bjj")
+sources/1 = SubResource("TileSetAtlasSource_e83gh")

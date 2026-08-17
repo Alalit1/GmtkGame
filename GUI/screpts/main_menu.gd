@@ -7,7 +7,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	TranslationServer.set_locale(Config.language)
-	AudioManager.play_music(1)
+	await AudioManager.play_sound("Music",0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

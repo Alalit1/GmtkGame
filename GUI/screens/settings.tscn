@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dg50rlj07cca2"]
 
 [ext_resource type="Script" uid="uid://bfj4ad11jbalb" path="res://GUI/screpts/settings.gd" id="1_n16i8"]
-[ext_resource type="Texture2D" uid="uid://bp0dmknurnos5" path="res://icon.svg" id="2_438b1"]
+[ext_resource type="Texture2D" uid="uid://s6qi8fcpq7at" path="res://assetes/sprites/EU.jpg" id="2_438b1"]
 
 [node name="Settings" type="Control" unique_id=42141974]
 layout_mode = 3

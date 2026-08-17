@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BrainData" format=3 uid="uid://c30en2peukcpf"]
+
+[ext_resource type="Script" uid="uid://c4vdme301g5fx" path="res://technical/ai/scripts/brain_action.gd" id="1_rvivx"]
+[ext_resource type="Script" uid="uid://1kb578b16jkw" path="res://technical/ai/scripts/ranged_planner.gd" id="2_2t7sc"]
+[ext_resource type="Script" uid="uid://byoj4tml6g3tb" path="res://technical/ai/scripts/brain_data.gd" id="2_14o3w"]
+
+[sub_resource type="Resource" id="Resource_20qop"]
+script = ExtResource("2_2t7sc")
+metadata/_custom_type_script = "uid://1kb578b16jkw"
+
+[resource]
+script = ExtResource("2_14o3w")
+planner = SubResource("Resource_20qop")
+metadata/_custom_type_script = "uid://byoj4tml6g3tb"

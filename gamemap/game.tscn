@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dnpt82wnr3k8a"]
+
+[ext_resource type="Script" uid="uid://c2pa7kpl5elnl" path="res://gamemap/game.gd" id="1_2m7y0"]
+[ext_resource type="PackedScene" uid="uid://m7oj5ww5hp4s" path="res://gamemap/rooms/screns/base_room.tscn" id="1_kd78b"]
+
+[node name="Game" type="Node2D" unique_id=930561444]
+script = ExtResource("1_2m7y0")
+
+[node name="BaseRoom" parent="." unique_id=898233573 instance=ExtResource("1_kd78b")]

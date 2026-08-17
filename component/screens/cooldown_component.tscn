@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://86iymtd67mln"]
+
+[ext_resource type="Script" uid="uid://cc1msuhx5ddvy" path="res://component/screpts/cooldown_component.gd" id="1_sd48j"]
+
+[node name="CooldownComponent" type="Node2D" unique_id=1431995954]
+script = ExtResource("1_sd48j")
+
+[node name="Timer" type="Timer" parent="." unique_id=104759159]

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="RoomGenerateArray" format=3 uid="uid://c1n3xun0hnqle"]
+
+[ext_resource type="Script" uid="uid://ccj4joheh3isk" path="res://gamemap/rooms/screpts/room_data.gd" id="1_3atcv"]
+[ext_resource type="Script" uid="uid://ctxmdtnnd74g7" path="res://entitys/enemy/screpts/enemy_data.gd" id="1_r2wyl"]
+[ext_resource type="Resource" uid="uid://clqb0dkxet70i" path="res://gamemap/rooms/resurse/battale_room.tres" id="2_5hxkl"]
+[ext_resource type="Script" uid="uid://b064h13h2qjcf" path="res://gamemap/rooms/screpts/room_generate_array.gd" id="2_ae6fl"]
+[ext_resource type="Resource" uid="uid://c0iamhijoot0q" path="res://gamemap/rooms/resurse/corrior.tres" id="3_r2wyl"]
+[ext_resource type="Resource" uid="uid://bh4umg4n05j6j" path="res://gamemap/rooms/resurse/corrior_item.tres" id="4_0tqgd"]
+[ext_resource type="Resource" uid="uid://ddwldbx7snawf" path="res://gamemap/rooms/resurse/shop.tres" id="5_ut8u2"]
+[ext_resource type="Resource" uid="uid://cwvqd7c6avka1" path="res://gamemap/rooms/resurse/boss.tres" id="6_bk51p"]
+[ext_resource type="TileSet" uid="uid://c0ilrhe7igsl" path="res://assetes/sprites/tile_set/room_tile.tres" id="8_jaq4i"]
+
+[resource]
+script = ExtResource("2_ae6fl")
+generate_room_array = Array[ExtResource("1_3atcv")]([ExtResource("2_5hxkl"), ExtResource("3_r2wyl"), ExtResource("4_0tqgd"), ExtResource("5_ut8u2"), ExtResource("6_bk51p")])
+tile_set = ExtResource("8_jaq4i")
+exit_wall = 2
+metadata/_custom_type_script = "uid://b064h13h2qjcf"

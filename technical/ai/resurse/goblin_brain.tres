@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BrainData" format=3 uid="uid://b3gvevjjcs57t"]
+
+[ext_resource type="Script" uid="uid://c4vdme301g5fx" path="res://technical/ai/scripts/brain_action.gd" id="1_4appq"]
+[ext_resource type="Script" uid="uid://c5jqwuvbtddox" path="res://technical/ai/scripts/melee_planner.gd" id="2_mercv"]
+[ext_resource type="Script" uid="uid://byoj4tml6g3tb" path="res://technical/ai/scripts/brain_data.gd" id="2_pcbya"]
+
+[sub_resource type="Resource" id="Resource_xywk3"]
+script = ExtResource("2_mercv")
+metadata/_custom_type_script = "uid://c5jqwuvbtddox"
+
+[resource]
+script = ExtResource("2_pcbya")
+planner = SubResource("Resource_xywk3")
+metadata/_custom_type_script = "uid://byoj4tml6g3tb"

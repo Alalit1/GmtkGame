@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RoomCorridor" format=3 uid="uid://c0iamhijoot0q"]
+
+[ext_resource type="Script" uid="uid://dtm6p7uga2hdj" path="res://gamemap/rooms/screpts/room_corridor.gd" id="1_ecnph"]
+[ext_resource type="Script" uid="uid://ctxmdtnnd74g7" path="res://entitys/enemy/screpts/enemy_data.gd" id="1_nxi22"]
+
+[resource]
+script = ExtResource("1_ecnph")
+required_events = Array[int]([4])
+next_event = Array[int]([0, 3, 1])
+curent_enemy = 0
+enemy_spawn_count = 0
+metadata/_custom_type_script = "uid://dtm6p7uga2hdj"

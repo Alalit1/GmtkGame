@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://becuvlx5gr1ix"]
+
+[ext_resource type="Script" uid="uid://g4r3lfm40yfo" path="res://component/screpts/status_effect_component.gd" id="1_8u0f6"]
+
+[node name="StatusEffectComponent" type="Node2D" unique_id=179436764]
+script = ExtResource("1_8u0f6")

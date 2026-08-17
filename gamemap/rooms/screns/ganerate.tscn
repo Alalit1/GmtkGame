@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d3wuycwln8vlo"]
+
+[ext_resource type="Script" uid="uid://dtok6vecqf1ni" path="res://gamemap/rooms/screpts/ganerate.gd" id="1_ui8sg"]
+
+[node name="Ganerate" type="Node2D" unique_id=1220497612]
+script = ExtResource("1_ui8sg")

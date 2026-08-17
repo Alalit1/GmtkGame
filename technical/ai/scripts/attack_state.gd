@@ -2,4 +2,5 @@ class_name AttackState
 extends State
 
 func update(delta):
-	print("test ile")
+	pass
+	#print("test ile")

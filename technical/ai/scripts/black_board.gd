@@ -11,5 +11,6 @@ var attack_type : String = "melee"
 var attack_range := 30.0
 var distance
 var long_range_attack_distance := 70.0
+var danger_zone = 50.0
 
 var current_state = ""

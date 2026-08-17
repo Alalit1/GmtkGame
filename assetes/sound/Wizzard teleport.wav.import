@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c30v38vf2nd3q"
+path="res://.godot/imported/Wizzard teleport.wav-d97e5a0fc6368c6d8f780bb12a0e4c31.sample"
+
+[deps]
+
+source_file="res://assetes/sound/Wizzard teleport.wav"
+dest_files=["res://.godot/imported/Wizzard teleport.wav-d97e5a0fc6368c6d8f780bb12a0e4c31.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

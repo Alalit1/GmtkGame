@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://m7oj5ww5hp4s"]
+
+[ext_resource type="Script" uid="uid://bp0wpp1ww0x7p" path="res://gamemap/rooms/screpts/base_room.gd" id="1_2pbra"]
+[ext_resource type="Resource" uid="uid://c1n3xun0hnqle" path="res://gamemap/rooms/resurse/generate_array.tres" id="2_057ol"]
+[ext_resource type="PackedScene" uid="uid://d3wuycwln8vlo" path="res://gamemap/rooms/screns/ganerate.tscn" id="2_i1x57"]
+[ext_resource type="TileSet" uid="uid://c0ilrhe7igsl" path="res://assetes/sprites/tile_set/room_tile.tres" id="2_rtmxy"]
+[ext_resource type="Script" uid="uid://cvgxi7o10fr1g" path="res://gamemap/rooms/screns/drwing_map.gd" id="4_ykj80"]
+
+[node name="BaseRoom" type="Node2D" unique_id=898233573]
+script = ExtResource("1_2pbra")
+generate_array = ExtResource("2_057ol")
+
+[node name="Ganerate" parent="." unique_id=1220497612 instance=ExtResource("2_i1x57")]
+
+[node name="DrwingMap" type="Node2D" parent="." unique_id=2141071288]
+script = ExtResource("4_ykj80")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="DrwingMap" unique_id=612385223]
+
+[node name="Floor" type="TileMapLayer" parent="DrwingMap" unique_id=496086673]
+tile_set = ExtResource("2_rtmxy")
+
+[node name="Spawner" type="Node2D" parent="." unique_id=1739940901]
