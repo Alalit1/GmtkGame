@@ -21,6 +21,7 @@ func attack(
 	attack_instance.global_position = pos
 	attack_instance.rotation = direction.angle()
 
+
 	attack_instance.setup(
 		damage_data,
 		direction

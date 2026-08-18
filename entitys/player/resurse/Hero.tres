@@ -1,7 +1,15 @@
 [gd_resource type="Resource" script_class="PlayerData" format=3 uid="uid://r80jngu813w5"]
 
 [ext_resource type="Script" uid="uid://p4mka6gvjy7c" path="res://entitys/player/screpts/player_data.gd" id="1_14u6m"]
+[ext_resource type="Script" uid="uid://dyd2ql0i4w7jh" path="res://combat/screpts/damage_data.gd" id="1_ygpo1"]
+
+[sub_resource type="Resource" id="Resource_ve07k"]
+script = ExtResource("1_ygpo1")
+metadata/_custom_type_script = "uid://dyd2ql0i4w7jh"
 
 [resource]
 script = ExtResource("1_14u6m")
+id = "hero_swordsman"
+debug_color = Color(0.2784314, 0.41568628, 0.019607844, 0.5372549)
+damage_data = SubResource("Resource_ve07k")
 metadata/_custom_type_script = "uid://p4mka6gvjy7c"

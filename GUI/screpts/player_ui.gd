@@ -8,7 +8,7 @@ var last_stamina := -1
 @onready var player = get_parent().get_parent()
 
 func _ready():
-	player.hp_changed.connect(_on_hp_changed)
+	player.hp_changeds.connect(_on_hp_changed)
 	player.stamina_changed.connect(_on_stamina_changed)
 	player.daed.connect(_on_daed_changed)
 	

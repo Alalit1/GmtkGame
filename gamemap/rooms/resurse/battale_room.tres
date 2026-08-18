@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BattaleRoom" format=3 uid="uid://clqb0dkxet70i"]
+
+[ext_resource type="Script" uid="uid://crg6uum2rnf2j" path="res://gamemap/rooms/screpts/room_battale.gd" id="1_6i85x"]
+[ext_resource type="Script" uid="uid://ctxmdtnnd74g7" path="res://entitys/enemy/screpts/enemy_data.gd" id="1_15h4y"]
+[ext_resource type="Resource" uid="uid://cxnajieb6wfm1" path="res://entitys/enemy/resource/skeleton.tres" id="2_byd2j"]
+[ext_resource type="Resource" uid="uid://deltl0o2jyovv" path="res://entitys/enemy/resource/goblin.tres" id="3_qhmkt"]
+
+[resource]
+script = ExtResource("1_6i85x")
+required_events = Array[int]([2, 0])
+next_event = Array[int]([4])
+enemy_spawn = true
+enemy = Array[ExtResource("1_15h4y")]([ExtResource("2_byd2j"), ExtResource("3_qhmkt")])
+curent_enemy = 5
+enemy_spawn_count = 5
+metadata/_custom_type_script = "uid://crg6uum2rnf2j"

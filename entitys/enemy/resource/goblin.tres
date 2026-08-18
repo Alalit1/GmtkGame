@@ -9,6 +9,7 @@ script = ExtResource("1_dlxql")
 id = "goblin"
 height = 10.0
 radius = 10.0
+debug_color = Color(0.93796724, 0.9563212, 0, 1)
 vision_area = 200.0
 sprite_frames = ExtResource("2_t8i8a")
 damage_data = ExtResource("1_34wad")

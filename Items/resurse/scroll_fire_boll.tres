@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bqlyp1dus5hc2"]
 
 [ext_resource type="Script" uid="uid://cgwq8btxfgioo" path="res://Items/screpts/item_data.gd" id="1_diog4"]
+[ext_resource type="PackedScene" uid="uid://d0b6c268k7bpe" path="res://combat/screens/damage_zone.tscn" id="1_qmqqv"]
 [ext_resource type="Texture2D" uid="uid://dae50a0uw2wlb" path="res://assetes/sprites/object_atlas.png" id="2_igp5t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cfsei"]
@@ -9,8 +10,12 @@ region = Rect2(509.5, 0.5, 45, 45)
 
 [resource]
 script = ExtResource("1_diog4")
+item_id = "scroll_fire_boll"
+item_scene_damage = ExtResource("1_qmqqv")
 texture = SubResource("AtlasTexture_cfsei")
 cost = 100
 name = "FIRE_SCROLL"
 description = "FIREBALL_LABEL"
+item_type = 1
+count_use = 10
 metadata/_custom_type_script = "uid://cgwq8btxfgioo"

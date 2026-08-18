@@ -1,10 +1,11 @@
 class_name Planner
-extends RefCounted
+extends Resource
 
 
 # плануання діл
 func make_plan(blackboard: Blackboard) -> Action:
-	var action := Action.new()
+	return Action.new()
+	"""var action := Action.new()
 
 	if blackboard.target:
 		var distance := blackboard.global_position.distance_to(
@@ -15,6 +16,7 @@ func make_plan(blackboard: Blackboard) -> Action:
 		var direction := blackboard.global_position.direction_to(
 			blackboard.target.global_position
 		)
+		#if not distance <= blackboard.danger_zone:
 		if distance <= blackboard.attack_range and blackboard.attack_type == "melee":
 			action.type = Action.Type.ATTACK
 			action.target = blackboard.target
@@ -29,12 +31,9 @@ func make_plan(blackboard: Blackboard) -> Action:
 		action.target = blackboard.target
 		action.position = blackboard.target.global_position
 		return action
+		
 	else:
 		action.type = Action.Type.IDLE
 		action.target = blackboard.target
-		return action	
+		return action	"""
 	
-"""if blackboard.target :
-		action.type = Action.Type.ATTACK
-		action.target = blackboard.target
-		return action"""

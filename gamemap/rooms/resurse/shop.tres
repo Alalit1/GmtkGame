@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RoomShop" format=3 uid="uid://ddwldbx7snawf"]
+
+[ext_resource type="Script" uid="uid://cyygyx5kml0i5" path="res://gamemap/rooms/screpts/room_shop.gd" id="1_iex3q"]
+[ext_resource type="Script" uid="uid://ctxmdtnnd74g7" path="res://entitys/enemy/screpts/enemy_data.gd" id="1_uiy3f"]
+
+[resource]
+script = ExtResource("1_iex3q")
+common_spawn_chance = 40.0
+required_events = Array[int]([3, 0])
+next_event = Array[int]([4])
+curent_enemy = 0
+enemy_spawn_count = 0
+metadata/_custom_type_script = "uid://cyygyx5kml0i5"

@@ -1,7 +1,7 @@
 class_name Characteristic
 extends Node
 
-
+var entity_type: int
 var health: float
 var damage: float
 var stamina : float

@@ -2,8 +2,15 @@ extends Control
 
 
 @onready var popup = $MarginContainer/MenuButton.get_popup() as PopupMenu
+@onready var menu_button: MenuButton = $MarginContainer/MenuButton
+var icons = {
+	0: preload("res://assetes/sprites/EU.jpg"),
+	1: preload("res://assetes/sprites/RUS.jpg"),
+	2: preload("res://assetes/sprites/UA.jpg")
+}
 
 func _ready():
+	menu_button.get_popup().id_pressed.connect(_on_menu_pressed)
 	popup.add_item("English", 0)
 	popup.add_item("Русский", 1)
 	popup.add_item("Українська", 2)
@@ -11,16 +18,23 @@ func _ready():
 	popup.id_pressed.connect(_on_language_selected)
 
 
+
+func _on_menu_pressed(id: int) -> void:
+	menu_button.icon = icons[id]
+
 func _on_language_selected(id):
 	match id:
 		0:
 			TranslationServer.set_locale("en")
+		
 			Config.language = "en"
 		1:
 			TranslationServer.set_locale("ru")
+
 			Config.language = "ru"
 		2:
 			TranslationServer.set_locale("uk")
+	
 			Config.language = "uk"
 
 func _on_master_value_changed(value: float) -> void:

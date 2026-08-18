@@ -4,6 +4,7 @@ extends Resource
 
 @export_category("tex")
 @export var id : String
+@export_enum("enemy","player") var entity_type : int = 0
 @export_category("Colision")
 @export_group("Size")
 ## высота colision
@@ -11,7 +12,7 @@ extends Resource
 ## шырына colision
 @export var radius : float
 @export_group("mask $ layer")
-@export var debug_color:Color
+@export var debug_color:Color =Color(0.0, 1.0, 0.0)
 @export var mask : Array[int] = [3]
 @export var layer : Array[int] = [2,3,4]
 @export_category("Characteristic")
@@ -47,5 +48,12 @@ extends Resource
 ##
 @export var sound_list = AudioStreamPlaylist 
 @export_category("Attack")
-@export_enum("male","range") var type: int
+enum AttackType {
+	MELEE,
+	RANGED,
+	WIZARD
+}
+
+
 @export var damage_data : DamageData
+@export var attack_type: AttackType = AttackType.MELEE

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cppi2xj1jfyws"]
+
+[ext_resource type="Script" uid="uid://dsh3qx3l6c8ag" path="res://technical/scripts/test_map.gd" id="1_1hj31"]
+[ext_resource type="Resource" uid="uid://r80jngu813w5" path="res://entitys/player/resurse/Hero.tres" id="3_20qop"]
+[ext_resource type="PackedScene" uid="uid://2ykal2ib6dd1" path="res://entitys/player/screns/player.tscn" id="4_f5t1s"]
+
+[node name="TestMap" type="Node2D" unique_id=1472668781]
+script = ExtResource("1_1hj31")
+
+[node name="player" parent="." unique_id=1310728911 instance=ExtResource("4_f5t1s")]
+player_data = ExtResource("3_20qop")

@@ -1,0 +1,9 @@
+[gd_resource type="AudioStreamPlaylist" format=3 uid="uid://blvth3ertv7n"]
+
+[ext_resource type="AudioStream" uid="uid://br3v0xlx1n0lc" path="res://assetes/sound/Goblin.mp3" id="1_4u8kg"]
+[ext_resource type="AudioStream" uid="uid://dqmqa12ambrwl" path="res://assetes/sound/Goblin attack.wav" id="2_8eunx"]
+
+[resource]
+stream_count = 2
+stream_0 = ExtResource("1_4u8kg")
+stream_1 = ExtResource("2_8eunx")

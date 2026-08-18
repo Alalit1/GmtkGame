@@ -5,6 +5,7 @@ extends RefCounted
 enum Type {
 	IDLE,
 	MOVE,
+	ESCAPE,
 	ATTACK
 }
 

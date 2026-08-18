@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bugyqsotp8g4j"]
+
+[ext_resource type="Script" uid="uid://ccow603klfwmm" path="res://GUI/screpts/amount_damage.gd" id="1_fkf5b"]
+
+[node name="AmountDamage" type="Label" unique_id=232160991]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 10
+script = ExtResource("1_fkf5b")

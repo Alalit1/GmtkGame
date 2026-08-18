@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://ctlw5yymrtwph" path="res://component/screpts/characteristic.gd" id="1_nsr4e"]
 
-[node name="Characteristic" type="Node" unique_id=1655018436]
+[node name="Characteristic" type="Node" unique_id=1227889245]
 script = ExtResource("1_nsr4e")
